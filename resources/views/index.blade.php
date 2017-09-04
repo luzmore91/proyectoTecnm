@@ -16,7 +16,16 @@
             @include('header')
         </div>
 
-
+          <!-- -->
+            <div class="container">
+            @include('estadoProyecto')
+        </div>
+         <div class="container">
+            @include('colaboracionIES')
+        </div>
+        <div class="container">
+            @include('recursosAplicacion')
+        </div>
 
         <div class="container">
             @include('footer')
