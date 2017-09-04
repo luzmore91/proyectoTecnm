@@ -1,7 +1,9 @@
 <div class="row" style="padding-top:20px" >
 <div class="col-xs-12" style="padding-top:20px">
+<div class="col-xs-12" style="padding-top:20px">
 <div class="col-xs-5"><label>2. Estado de desarrollo/madurez del proyecto/tecnología (TRL)</label></div>
 <div class="col-xs-7">
+
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
                   		<option>Opción 01</option>

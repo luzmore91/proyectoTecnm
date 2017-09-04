@@ -3,8 +3,7 @@
         <title>Tecnologico de mexico</title>
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/css/bootstrap-timepicker.min.css') }}" rel="stylesheet" type="text/css">
-    <link href="{{ asset('/css/dataTables.bootstrap.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('/css/bootstrap-select.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="{{ asset('/css/form.css') }}" rel="stylesheet" type="text/css">
@@ -17,7 +16,7 @@
             @include('header')
         </div>
 
-          <!-- -->
+          <!--Estado de proyecto, sector estrategico , propiedad intelectual y lo que persigue el proyecto-->
             <div class="container">
             @include('estadoProyecto')
         </div>
@@ -32,4 +31,11 @@
             @include('footer')
         </div>
     </body>
+
+    <!-- Select -->
+    <script type="text/javascript" src="{{asset('/js/jquery.min.js')}}"></script>
+<script type="text/javascript" src="{{asset('/js/bootstrap.js')}}"></script>
+<script type="text/javascript" src="{{ asset('/js/bootstrap-select.js') }}"></script>
+<script type="text/javascript" src="{{ asset('/js/codigoSelect.js') }}"></script>
+
 </html>
