@@ -5,7 +5,8 @@
 
   <tr>
     <th>
-    	<b>Recursos; </b><i>Indique los recursos humanos, tecnológicos y financieros con los que cuenta actualmente para que la tecnología/proyecto avance.</i>
+        <h2>9. Recursos</h2>
+    	<label style="font-style:italic">Indique los recursos humanos, tecnológicos y financieros con los que cuenta actualmente para que la tecnología/proyecto avance.</label>
    	</th>
   </tr>
 
@@ -34,7 +35,9 @@
 
   <tr>
     <th>
-    	<b>Usos/Aplicaciones; </b><i>Indique el/los mercado(s) a los que va dirigida su tecnología y el/los uso(s) que se darán en éste(os).</i>
+         <h2>10.Usos/Aplicaciones</h2>
+    	<label style="font-style:italic">Indique el/los mercado(s) a los que va dirigida su tecnología y el/los uso(s) que se darán en éste(os).</label>
+
    	</th>
   </tr>
 
@@ -51,7 +54,9 @@
 
   <tr>
     <th>
-      <b>Viabilidad; </b><i>Indique si para la la tecnología/proyecto se ha validado la viabilidad técnica y financiera, y la existencia de prospectos interesados en la misma.</i>
+         <h2>11.Viabilidad</h2>
+    	<label style="font-style:italic">Indique si para la la tecnología/proyecto se ha validado la viabilidad técnica y financiera, y la existencia de prospectos interesados en la misma.</label>
+
     </th>
   </tr>
 
@@ -68,7 +73,11 @@
 
   <tr>
     <th>
-      <b>Beneficios; </b><i>Para el proyecto/tecnología indique la cuantificación de los beneficios en términos de rendimiento, físicos, costos, ambientales y ciclo de vida del producto de acuerdo al mercado identificado.</i>
+
+         <h2>12.Beneficios</h2>
+    	<label style="font-style:italic">Para el proyecto/tecnología indique la cuantificación de los beneficios en términos de rendimiento, físicos, costos, ambientales y ciclo de vida del producto de acuerdo al mercado identificado.</label>
+
+
     </th>
   </tr>
 
