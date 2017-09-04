@@ -16,8 +16,12 @@
             @include('header')
         </div>
 
-          <!--Estado de proyecto, sector estrategico , propiedad intelectual y lo que persigue el proyecto-->
-            <div class="container">
+        <!--Tecnologia o Proyecto y Equipo Emprendedor o Inventor-->
+        <div class="container">
+            @include('tecnologiaEquipoEmprendedor')
+        </div>
+        <!--Estado de proyecto, sector estrategico , propiedad intelectual y lo que persigue el proyecto-->
+        <div class="container">
             @include('estadoProyecto')
         </div>
          <div class="container">
