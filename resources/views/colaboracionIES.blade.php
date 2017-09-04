@@ -1,9 +1,11 @@
 
-<h2>6. Colaboración con otras IES. Describa las IES y el tipo de colaboración que el proyecto tiene con éstas.</h2>
+<h2>6. Colaboración con otras IES.</h2>
+<label style="font-style:italic">Describa las IES y el tipo de colaboración que el proyecto tiene con éstas.</label>
 <textarea class="form-control" rows="6"></textarea>
              
 
-<h2>7. Riesgos. Describa los riesgos asociados con su proyecto/tecnología, y sus estrategias de mitigación.</h2>
+<h2>7. Riesgos.</h2>
+<label style="font-style:italic">Describa los riesgos asociados con su proyecto/tecnología, y sus estrategias de mitigación.</label>
 
 <table id="altaEquipo" class="table table-striped table-hover sortable">
                         <thead>
@@ -93,5 +95,6 @@
             </tbody>
 </table>                  
       
-<h2>8. Análisis del entorno. Indique el tamaño de la industria a la que va dirigida su tecnología/proyecto, la industria que le proveería sus insumos, clientes/consumidores de su tecnología/proyecto, las tecnologías/proyectos competidores y sus ofertas, y sus factores de demanda.</h2>
+<h2>8. Análisis del entorno.</h2>
+<label style="font-style:italic">Indique el tamaño de la industria a la que va dirigida su tecnología/proyecto, la industria que le proveería sus insumos, clientes/consumidores de su tecnología/proyecto, las tecnologías/proyectos competidores y sus ofertas, y sus factores de demanda.</label>
 <textarea class="form-control" rows="6"></textarea>
