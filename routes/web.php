@@ -22,3 +22,6 @@ Route::get('home', function () {
     return view('index');
 });
 
+Route::get('admin', function () {
+    return view('admin');
+});
