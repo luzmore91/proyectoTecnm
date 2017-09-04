@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div id="middleHeader3" class="col-xs-4">
-                <div id="logo"><img src="images/logos/Logo-TecNM-2017.png" width="300" height="150" alt="Plataforma de las Capacidades Científicas y Tecnológicas" style="top: -50px;
+                <div id="logo"><img src="images/logos/Logo-TecNM-2017.png" width="200" height="100" alt="Plataforma de las Capacidades Científicas y Tecnológicas" style="top: -30px;
     position: relative;"> </div>
             </div>
             <!--div id="middleHeader4" class="col-xs-2">
