@@ -65,7 +65,11 @@
                 <div id="sep"><a href="http://sep.gob.mx/" target="_blank"><img src="images/logos/logo-sep-web.png" width="270" height="80" alt="Secretaría de Educación Pública"></a> </div>
             </div>
             <div id="middleHeader2" class="col-xs-4">
-                <div id="site">Plataforma de las Capacidades Científicas y Tecnológicas
+                <div id="site">Tecnológico Nacional de México
+                </div>
+                <div id="site">Secretaría de Extesión y Vinculación
+                </div>
+                <div id="site">Inventario de Tecnologías / Proyectos
                 </div>
             </div>
             <div id="middleHeader3" class="col-xs-2">
