@@ -4,7 +4,7 @@
         <!-- topHeader starts -->
         <div id="topHeader" class="row">
             <div id="topHeaderLeft" class="col-xs-5 col-xs-offset-4">
-                <div id="menuTop">
+                <!---div id="menuTop">
                     <ul id="navTop">
                         <li><a href="pantalla01-home.html">Inicio</a></li>
                         <li>|</li>
@@ -12,15 +12,15 @@
                         <li>|</li>
                         <li><a href="pantalla08-ayuda.html">Ayuda</a></li>
                     </ul>
-                </div>
+                </div-->
             </div>
             <div id="topHeaderRight" class="col-xs-3">
-                <div id="search">
+                <!---div id="search">
                     <div class="input-group">
                       <input type="text" class="form-control input-sm">
                       <span class="input-group-addon glyphicon glyphicon-search btn-green btn-sm"></span>
                     </div>
-                </div>
+                </div-->
             </div>
         </div>
         <!-- topHeader ends -->
@@ -34,12 +34,13 @@
                 <div id="site">Plataforma de las Capacidades Científicas y Tecnológicas
                 </div>
             </div>
-            <div id="middleHeader3" class="col-xs-2">
-                <div id="logo"><img src="images/logos/logo-web.png" width="115" height="80" alt="Plataforma de las Capacidades Científicas y Tecnológicas"> </div>
+            <div id="middleHeader3" class="col-xs-4">
+                <div id="logo"><img src="images/logos/Logo-TecNM-2017.png" width="200" height="100" alt="Plataforma de las Capacidades Científicas y Tecnológicas" style="top: -30px;
+    position: relative;"> </div>
             </div>
-            <div id="middleHeader4" class="col-xs-2">
+            <!--div id="middleHeader4" class="col-xs-2">
                 <div id="snit"><a href="http://www.snit.mx/" target="_blank"><img src="images/logos/logo-tnm-web.png" width="115" height="80" alt="Tecnológico Nacional de México"></a></div>
-            </div>
+            </div-->
          </div>
          <!-- middleHeader ends -->
             
@@ -48,7 +49,7 @@
          <div id="bottomHeader" class="row">            
          	<div class="col-xs-9">
                 <div id="menu">
-                    <ul class="sf-menu">
+                    <!---ul class="sf-menu">
                         <li><a href="#">Oferta Educativa</a>
                             <ul>
                                 <li><a href="#">Submenú 01</a></li>
@@ -73,7 +74,7 @@
                                 <li><a href="#">Submenú 04</a></li>
                             </ul>
                         </li>
-                    </ul>         
+                    </ul-->
                 </div>
             </div>
             <div class="col-xs-3">
