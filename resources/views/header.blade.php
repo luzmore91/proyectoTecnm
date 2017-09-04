@@ -79,7 +79,7 @@
             </div>
             <div class="col-xs-3">
             	<div id="user">
-                	<a href="#"><span class="glyphicon glyphicon-log-in"></span>Registrarse</a><a href="#"><span class="glyphicon glyphicon-user"></span>Ingresar</a>
+                	<a href="#"><span class="glyphicon glyphicon-log-in"></span>Registrarse</a><a href="admin"><span class="glyphicon glyphicon-user"></span>Ingresar</a>
                 </div>
             </div>
          </div>
