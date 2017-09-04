@@ -1,8 +1,9 @@
-<div class="row" style="padding-top:20px" >
+<div class="row" style="padding-top:20px;padding-bottom:20px" >
 <div class="col-xs-12" style="padding-top:20px">
 <div class="col-xs-12" style="padding-top:20px">
-<div class="col-xs-5"><label>2. Estado de desarrollo/madurez del proyecto/tecnología (TRL)</label></div>
-<div class="col-xs-7">
+<h2>2. Estado de desarrollo/madurez del proyecto/tecnología (TRL)</h2>
+
+<div class="col-xs-12">
 
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
@@ -13,8 +14,8 @@
 </div>
 </div>
 <div class="col-xs-12" style="padding-top:20px">
-<div class="col-xs-5"><label>3. Sector estratégico</label></div>
-<div class="col-xs-7">
+<h2>3. Sector estratégico</h2>
+<div class="col-xs-12">
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
                   		<option>Opción 01</option>
@@ -24,7 +25,8 @@
 </div>
 </div>
 <div class="col-xs-12" style="padding-top:20px">
-<div class="col-xs-3"><label>4. Propiedad Intelectual.</label> <label style="font-style:italic"> Estado actual</label></div>
+    <h2>4. Propiedad Intelectual</h2>
+<div class="col-xs-3"><label style="font-style:italic"> Estado actual</label></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
@@ -46,7 +48,8 @@
 
 </div>
 <div class="col-xs-12" style="padding-top:20px">
-           <div class="col-xs-3"><label>5. Lo que persigue el proyecto/tecnología es</label></div>
+    <h2>5. Lo que persigue el proyecto/tecnología es</h2>
+           <div class="col-xs-3"></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
