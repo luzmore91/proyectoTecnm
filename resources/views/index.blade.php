@@ -57,6 +57,7 @@
     <script type="text/javascript" src="{{asset('/js/bootstrap.js')}}"></script>
     <script type="text/javascript" src="{{ asset('/js/bootstrap-select.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/codigoSelect.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('/js/popOver.js') }}"></script>
     <script>
     </script>
 </html>
