@@ -1,6 +1,14 @@
 <!-- Bloque cero y uno -->
   <div class="row">
- 		<h2 style="margin: 20px 0px 20px 0px;">0. Tecnología / proyecto</h2>     
+      <div class="col-xs-12 espacioTitulosContenido">
+    <div class="col-xs-3"><h2>0. Tecnología / proyecto</h2></div>
+   <div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
+              data-container="body" data-toggle="popover" data-placement="left"
+              data-content="Captura la información solicitada del proyecto o tecnologia que estas desarrollando">
+              <span class="glyphicon glyphicon-question-sign"></span>
+           </button></div>
+    </div>
+
             	<!-- Input titulo -->
                 <div class="col-xs-12" style="padding-top: 20px;">
                     <div class="col-xs-2"><label for="titulo" >Título:</label></div> 
@@ -24,7 +32,7 @@
       
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
-                	<div class="col-xs-5"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green">
+                	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
                   		<option>Instituto Tecnológico de Aguascalientes</option>
                   		<option>Instituto Tecnológico de Ensenada</option>
@@ -44,8 +52,16 @@
             </div> 
                     
         <div class="col-xs-12" style="padding-top: 20px;"></div>
-		<h2>1. Equipo emprendeor / inventor</h2>
-        
+
+          <div class="col-xs-12 espacioTitulosContenido">
+    <div class="col-xs-4"><h2>1. Equipo emprendedor / inventor</h2></div>
+   <div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
+              data-container="body" data-toggle="popover" data-placement="left"
+              data-content="Captura la información solicitada del equipo que esta participando en el proyecto o tecnologia">
+              <span class="glyphicon glyphicon-question-sign"></span>
+           </button></div>
+    </div>
+      <div class="col-xs-12">
         <table id="altaEquipo" class="table table-striped table-hover sortable">
                         <thead>
                             <tr>
@@ -181,5 +197,5 @@
                         </tbody>
                     </table>        
             </div>
-              
+          </div>
                  
