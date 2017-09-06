@@ -28,7 +28,7 @@
 <h2>4. Propiedad Intelectual</h2>
 <div class="col-xs-12" style="padding-top:20px">
 
-<div class="col-xs-3"><label style="font-style:italic"> Estado actual</label></div>
+<div class="col-xs-2"><label style="font-style:italic"> Estado actual</label></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
@@ -39,7 +39,7 @@
 </div>
 
         <div class="col-xs-3"><label>En caso de que esté en proceso, revisión y otorgada la protección</label> <label style="font-style:italic">  favor de indicar el tipo de protección</label></div>
-<div class="col-xs-3">
+<div class="col-xs-4">
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
                   		<option>Opción 01</option>
@@ -52,7 +52,7 @@
 <h2>5. Lo que persigue el proyecto/tecnología es</h2>
 <div class="col-xs-12" style="padding-top:20px">
 
-           <div class="col-xs-3"></div>
+           <div class="col-xs-2"></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green">
                   		<option>Seleccione una opción</option>
@@ -63,8 +63,8 @@
 </div>
 
         <div class="col-xs-3"><label>En caso de seleccionar la opción "Otro", describir en el recuadro anexo.</label> </div>
-<div class="col-xs-3">
- 	 <input class="form-control" type="text" name="otro_ObjetivoProyecto" placeholder="¿Qué persigue el proyecto o tecnologia?"/>
+<div class="col-xs-4">
+ 	 <input class="form-control" type="text" name="otro_ObjetivoProyecto"  required placeholder="¿Qué persigue el proyecto o tecnologia?"/>
 </div>
 
 </div>
