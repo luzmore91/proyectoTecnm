@@ -34,13 +34,6 @@
             <div class="container" style="padding-bottom:60px">
 
 
-
-
-
-
- >
-       
-
                 <div class="row col-xs-12" id="botones">
                     <div class="col-xs-6">
 
