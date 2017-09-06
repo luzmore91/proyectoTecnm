@@ -33,14 +33,32 @@
             </div>
             <div class="container" style="padding-bottom:60px">
 
+
+
+
+
+
+ >
+       
+
                 <div class="row col-xs-12" id="botones">
                     <div class="col-xs-6">
-                        <button href="#" class="btn btn-success btn-lg" style="left: 80%;position: relative;">
-                            <span class="glyphicon glyphicon-ok">Aceptar</span>
-                        </button>
+
+
+        <button class="btn btn-success btn-lg" style="left: 80%;position: relative;">
+          <span class="glyphicon glyphicon-ok"></span> Aceptar 
+        </button>
+
+                       
+
                     </div>
+
                     <div class="col-xs-6">
-                        <button href="#" class="btn btn-danger btn-lg"><span class="glyphicon glyphicon-trash">Cancelar</span></button>
+                    
+       <button class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-remove"></span> Cancelar 
+        </button>
+
                     </div>
                 </div>
             </div>
