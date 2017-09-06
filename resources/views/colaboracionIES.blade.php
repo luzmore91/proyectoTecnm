@@ -1,7 +1,7 @@
 
 <h2>6. Colaboración con otras IES.</h2>
 <label style="font-style:italic">Describa las IES y el tipo de colaboración que el proyecto tiene con éstas.</label>
-<textarea class="form-control" rows="6"></textarea>
+<textarea class="form-control" rows="6" title="Descripción IES y tipo de colaboración" required></textarea>
              
 
 <h2>7. Riesgos.</h2>
@@ -28,8 +28,8 @@
                                   <option>De negocio</option>
                                   <option>Otro</option>
                 	            </select></td>
-                <td><input type="text" class="form-control" id="Decripcion1" placeholder=""/></td>
-                <td><input type="text" class="form-control" id="Estrategia1" placeholder=""/></td>
+                <td><textarea class="form-control" id="Decripcion1" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
+                <td><textarea class="form-control" id="Estrategia1" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
                    
         
                        
@@ -44,8 +44,8 @@
                                   <option>De negocio</option>
                                   <option>Otro</option>
                 	            </select></td>
-                <td><input type="text" class="form-control" id="Decripcion2" placeholder=""/></td>
-                <td><input type="text" class="form-control" id="Estrategia2" placeholder=""/></td>
+                <td><textarea class="form-control" id="Decripcion2" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
+                <td><textarea class="form-control" id="Estrategia2" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
             
                        
                              <tr>
@@ -59,8 +59,8 @@
                                   <option>De negocio</option>
                                   <option>Otro</option>
                 	            </select></td>
-                <td><input type="text" class="form-control" id="Decripcion3" placeholder=""/></td>
-                <td><input type="text" class="form-control" id="Estrategia3" placeholder=""/></td>
+                <td><textarea class="form-control" id="Decripcion3" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
+                <td><textarea class="form-control" id="Estrategia3" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
                                  
                   
                              <tr>
@@ -74,8 +74,8 @@
                                   <option>De negocio</option>
                                   <option>Otro</option>
                 	            </select></td>
-                <td><input type="text" class="form-control" id="Decripcion4" placeholder=""/></td>
-                <td><input type="text" class="form-control" id="Estrategia4" placeholder=""/></td>
+                <td><textarea class="form-control" id="Decripcion4" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
+                <td><textarea class="form-control" id="Estrategia4" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
             
                         
                              <tr>
@@ -89,12 +89,12 @@
                                   <option>De negocio</option>
                                   <option>Otro</option>
                 	            </select></td>
-                <td><input type="text" class="form-control" id="Decripcion5" placeholder=""/></td>
-                <td><input type="text" class="form-control" id="Estrategia5" placeholder=""/></td>
+                <td><textarea class="form-control" id="Decripcion5" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
+                <td><textarea class="form-control" id="Estrategia5" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required" ></textarea></td>
             </tr> 
             </tbody>
 </table>                  
       
 <h2>8. Análisis del entorno.</h2>
 <label style="font-style:italic">Indique el tamaño de la industria a la que va dirigida su tecnología/proyecto, la industria que le proveería sus insumos, clientes/consumidores de su tecnología/proyecto, las tecnologías/proyectos competidores y sus ofertas, y sus factores de demanda.</label>
-<textarea class="form-control" rows="6"></textarea>
+<textarea class="form-control" rows="6" title="Descripción IES y tipo de colaboración" required></textarea>
