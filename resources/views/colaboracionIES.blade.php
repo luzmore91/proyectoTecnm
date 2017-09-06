@@ -1,11 +1,25 @@
+<div class="col-xs-9 espacioTitulosContenido">
+<div class="col-xs-5"><h2>6. Colaboración con otras IES.</h2></div>
+<div><div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
+              data-container="body" data-toggle="popover" data-placement="left"
+              data-content="Realizar descripción de Institución de Educación Superior y el tipo de colaboración de proyecto.">
+              <span class="glyphicon glyphicon-question-sign"></span>
+           </button></div></div>
+</div>
 
-<h2>6. Colaboración con otras IES.</h2>
 <label style="font-style:italic">Describa las IES y el tipo de colaboración que el proyecto tiene con éstas.</label>
+
 <textarea class="form-control" rows="6" placeholder= "Descripción de Institución de Educación Superior
 " title="Descripción IES y tipo de colaboración" required></textarea>
              
-
-<h2>7. Riesgos.</h2>
+<div class="col-xs-7 espacioTitulosContenido">
+<div class="col-xs-3"><h2>7. Riesgos.</h2></div>
+<div><div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
+              data-container="body" data-toggle="popover" data-placement="left"
+              data-content="Describa los riesgos asociados con su proyecto y sus estrategias de mitigación.">
+              <span class="glyphicon glyphicon-question-sign"></span>
+           </button></div></div>
+</div>
 <label style="font-style:italic">Describa los riesgos asociados con su proyecto/tecnología, y sus estrategias de mitigación.</label>
 
 <table id="altaEquipo" class="table table-striped table-hover sortable">
@@ -95,8 +109,15 @@
             </tr> 
             </tbody>
 </table>                  
-      
-<h2>8. Análisis del entorno.</h2>
+
+<div class="col-xs-7 espacioTitulosContenido">
+<div class="col-xs-5"><h2>8. Análisis del entorno.</h2></div>
+<div><div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
+              data-container="body" data-toggle="popover" data-placement="left"
+              data-content="Indique el tamaño de la industria a la que va dirigida su proyecto">
+              <span class="glyphicon glyphicon-question-sign"></span>
+           </button></div></div>
+</div>
 <label style="font-style:italic">Indique el tamaño de la industria a la que va dirigida su tecnología/proyecto, la industria que le proveería sus insumos, clientes/consumidores de su tecnología/proyecto, las tecnologías/proyectos competidores y sus ofertas, y sus factores de demanda.</label>
 <textarea class="form-control" rows="6" placeholder= "Indique el tamaño de la industria a la que va dirigida su tecnología
 " title="Indique el tamaño de la industria" required></textarea>
