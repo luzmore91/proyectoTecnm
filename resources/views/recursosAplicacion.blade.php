@@ -1,4 +1,8 @@
-
+<style>
+textarea {
+  resize: none;
+}
+</style>
 <div class="row">
  <h2>9. Recursos</h2>
     	<label style="font-style:italic">Indique los recursos humanos, tecnológicos y financieros con los que cuenta actualmente para que la tecnología/proyecto avance.</label>
