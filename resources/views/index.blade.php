@@ -32,13 +32,6 @@
                 @include('recursosAplicacion')
             </div>
             
-                           <div class="container">
-                               imprimiendo consulta sql  ::::: 
-                               
-    @foreach ($tipo as $tipo)
-        {{ $tipo->descripcion }}
-    @endforeach
-</div>
             
             <div class="container" style="padding-bottom:60px">
 
