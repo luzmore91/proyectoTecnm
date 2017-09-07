@@ -15,19 +15,19 @@
 <table class="table table-condensed table-striped">
   <tr>
     <td>
-		<textarea class="form-control" rows="3" placeholder="RECURSOS HUMANOS:" required resize="disabled"></textarea>
+		<textarea style="resize: vertical" class="form-control" rows="3" placeholder="RECURSOS HUMANOS:" required resize="disabled"></textarea>
     </td>
 
   </tr>
   <tr>
     <td>
-		<textarea class="form-control" rows="3" placeholder="RECURSOS TECNOLÓGICOS:" required></textarea>
+		<textarea style="resize: vertical" class="form-control" rows="3" placeholder="RECURSOS TECNOLÓGICOS:" required></textarea>
     </td>
     
   </tr>
      <tr>
     <td>
-		<textarea class="form-control" rows="3" placeholder="RECURSOS FINANCIEROS:" required></textarea>
+		<textarea style="resize: vertical" class="form-control" rows="3" placeholder="RECURSOS FINANCIEROS:" required></textarea>
     </td>
     
   </tr>
@@ -46,7 +46,7 @@
 
   <tr>
     <td>
-		<textarea class="form-control" rows="2" placeholder="USOS/APLICACIONES:" required></textarea>
+		<textarea style="resize: vertical" class="form-control" rows="2" placeholder="USOS/APLICACIONES:" required></textarea>
     </td>
 
   </tr>
@@ -65,7 +65,7 @@
 
   <tr>
     <td>
-    <textarea class="form-control" rows="2" placeholder="VIABILIDAD:" required></textarea>
+    <textarea style="resize: vertical" class="form-control" rows="2" placeholder="VIABILIDAD:" required></textarea>
     </td>
 
   </tr>
@@ -82,7 +82,7 @@
 <table class="table table-condensed table-striped">
   <tr>
     <td>
-    <textarea class="form-control" rows="2" placeholder="BENEFICIOS:" required></textarea>
+    <textarea style="resize: vertical" class="form-control" rows="2" placeholder="BENEFICIOS:" required></textarea>
     </td>
 
   </tr>
