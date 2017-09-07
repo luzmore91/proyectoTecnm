@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" >
 <div class="col-xs-12 espacioTitulosContenido">
 <div class="col-xs-4"><h2>6. Colaboración con otras IES.</h2></div>
 <div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
