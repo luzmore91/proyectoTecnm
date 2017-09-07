@@ -33,8 +33,8 @@
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
                 	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green">
-                  		 @foreach ($institucion as $tipo)
-                                        <option> {{ $tipo->nombreInstitucion }}</option>
+                  		 @foreach ($institucion as $int)
+                                        <option> {{ $int->nombreInstitucion }}</option>
                                           @endforeach
 
                 	</select>
@@ -44,8 +44,8 @@
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
                 	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green">
-                  		 @foreach ($inv as $tipo)
-                                        <option> {{ $tipo->descripcion }}</option>
+                  		 @foreach ($inv as $in)
+                                        <option> {{ $in->descripcion }}</option>
                                           @endforeach
                 	</select>
                     </div>
@@ -78,8 +78,8 @@
                                 <td><input type="text" class="form-control" required id="Nombre1" placeholder=""/></td>
                                 <td class="text-center"> <select id="estudios1" required class="form-control selectpicker" data-style="btn-green">
 
-                                @foreach ($gradoEstudios as $tipo)
-                                        <option> {{ $tipo->nivel }}</option>
+                                @foreach ($gradoEstudios as $grado)
+                                        <option> {{ $grado->nivel }}</option>
                                           @endforeach
 
                 	            </select></td>
@@ -91,12 +91,16 @@
                 	            </select></td>
                                 <td><input type="email" required class="form-control" id="correo1" placeholder=""/></td>
                                 <td><input type="tel" required class="form-control" id="telefono1" placeholder=""/></td>                        
-                                <td class="text-center"> <select id="institucion1" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Instituto Tecnológico de Aguascalientes</option>
-                  		          <option>Instituto Tecnológico de Ensenada</option>
-                  		          <option>Instituto Tecnológico de Zacatepec</option>
-                	            </select></td>
+                                <td class="text-center">
+                                    <select id="institucion1" required class="form-control selectpicker" data-style="btn-green">
+
+                               @foreach ($institucion as $ti)
+                                        <option> {{ $ti->nombreInstitucion }}</option>
+                                          @endforeach
+                	            </select>
+                                </td>
+
+
                             </tr>
                             <tr>
                                 <td><input type="text" class="form-control" required id="Nombre2" placeholder=""/></td>
