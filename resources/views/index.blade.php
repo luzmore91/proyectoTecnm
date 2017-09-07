@@ -31,13 +31,23 @@
             <div class="container">
                 @include('recursosAplicacion')
             </div>
+            
+                           <div class="container">
+                               imprimiendo consulta sql  ::::: 
+                               
+    @foreach ($tipo as $tipo)
+        {{ $tipo->descripcion }}
+    @endforeach
+</div>
+            
             <div class="container" style="padding-bottom:60px">
 
 
                 <div class="row col-xs-12" id="botones">
                     <div class="col-xs-6">
 
-
+         
+      
         <button class="btn btn-success btn-lg" style="left: 80%;position: relative;">
           <span class="glyphicon glyphicon-ok"></span> Aceptar 
         </button>

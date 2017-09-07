@@ -14,13 +14,16 @@
 /*Route::get('/', function () {
     return view('welcome');
 });
-*/
-Route::get('/', function () {
+/*
+/Route::get('/', function () {
     return view('index');
 });
 Route::get('home', function () {
     return view('index');
 });
+*/
+//LLAMAR CONTROLADOR A LA VISTA
+Route::get('/','inademController@ver');
 
 Route::get('admin', function () {
     return view('admin');
