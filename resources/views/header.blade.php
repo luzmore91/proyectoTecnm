@@ -31,7 +31,11 @@
                 <div id="sep"><a href="http://sep.gob.mx/" target="_blank"><img src="images/logos/logo-sep-web.png" width="270" height="80" alt="Secretaría de Educación Pública"></a> </div>
             </div>
             <div id="middleHeader2" class="col-xs-4">
-                <div id="site" class="tituloInadem">Convocatoria INADEM
+                <div id="site" style="    font-size: 28px;
+    line-height: 40px;
+    width: 500px;
+    left: -30px;
+    position: relative;">Convocatoria INADEM
                 </div>
             </div>
             <div id="middleHeader3" class="col-xs-4">
