@@ -33,10 +33,10 @@
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
                 	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Instituto Tecnológico de Aguascalientes</option>
-                  		<option>Instituto Tecnológico de Ensenada</option>
-                  		<option>Instituto Tecnológico de Zacatepec</option>
+                  		 @foreach ($institucion as $tipo)
+                                        <option> {{ $tipo->nombreInstitucion }}</option>
+                                          @endforeach
+
                 	</select>
                     </div>
             </div>  
@@ -44,9 +44,9 @@
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
                 	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Producto o Servicio</option>
-                  		<option>Proceso</option>
+                  		 @foreach ($inv as $tipo)
+                                        <option> {{ $tipo->descripcion }}</option>
+                                          @endforeach
                 	</select>
                     </div>
             </div> 
@@ -77,11 +77,11 @@
                             <tr>
                                 <td><input type="text" class="form-control" required id="Nombre1" placeholder=""/></td>
                                 <td class="text-center"> <select id="estudios1" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Estudiante</option>
-                  		          <option>Licenciatura</option>
-                  		          <option>Maestria</option>
-                                  <option>Doctorado</option>
+
+                                @foreach ($gradoEstudios as $tipo)
+                                        <option> {{ $tipo->nivel }}</option>
+                                          @endforeach
+
                 	            </select></td>
                                 <td class="text-center"> <select id="area1" required class="form-control selectpicker" data-style="btn-green">
                   		          <option>Seleccione una opción</option>
