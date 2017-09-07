@@ -22,7 +22,7 @@ class inademController extends Controller
 
        ///////////PARTE 1///////////
         //--- catalogo gradoEstudios---//
-        $gradoEstudios = DB::select('select * from gradoEstudios');
+        $gradoEstudios = DB::select('select * from tipoGradoEstudios');
         //--- catalogo areaConocimiento---//
         $areaConocimiento = DB::select('select * from areaConocimiento'); 
         
@@ -30,17 +30,17 @@ class inademController extends Controller
         //--- catalogo TRL---//
         $TRL = DB::select('select * from TRL');
         //--- catalogo Sector---//
-        $sector = DB::select('select * from sector'); 
+        $sector = DB::select('select * from tipoSector');
         
          ///////////PARTE 4 y 5///////////
         //--- catalogo propiedad intelectual---//
-        $propInt = DB::select('select * from tipoRegistro'); //propiedadIntelectual
+        $propInt = DB::select('select * from tipoPropiedadIntelectual');
         //--- catalogo propiedad intelectual 2 pendiente ---//
-        
+         $prot = DB::select('select * from tipoProteccion');
         
          ///////////PARTE 6///////////
         //--- catalogo objetivo proyecto ---//
-        $objProy = DB::select('select * from objetivoProyecto');
+        $objProy = DB::select('select * from tipoObjetivoProyecto');
         
         
           
@@ -51,6 +51,6 @@ class inademController extends Controller
     
         
         //mostrar vista y catalogos 
-        return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy ]);
+        return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy,"prot" =>  $prot]);
     }
 }
