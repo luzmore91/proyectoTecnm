@@ -96,6 +96,13 @@ class inademController extends Controller
        //fin de objeto tabla
       $analisisEnt = $request->input('analisisEnt');
 
-     /* seccion 3 */
+
+     /* seccion 4 */
+      $recursosHumanos = $request->input('recursosHumanos');
+      $recursosTec = $request->input('recursosTec');
+      $recursosFin = $request->input('recursosFin');
+      $usoApp = $request->input('usoApp');
+      $viabilidad = $request->input('viabilidad');
+      $beneficios = $request->input('beneficios');
 }
 }
