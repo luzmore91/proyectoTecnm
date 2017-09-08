@@ -46,11 +46,11 @@ class inademController extends Controller
           
          ///////////PARTE 7///////////
         //--- catalogo riesgos---//
-        //$riesgos = DB::select('select * from tipoRiesgo');
+        $riesgos = DB::select('select * from tipoRiesgo');
         
     
         
         //mostrar vista y catalogos 
-        return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy,"prot" =>  $prot]);
+        return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy,"prot" =>  $prot,"riesgos" => $riesgos]);
     }
 }

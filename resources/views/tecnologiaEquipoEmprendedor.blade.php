@@ -85,11 +85,11 @@
                 	            </select></td>
                                 <td class="text-center"> <select id="area1" required class="form-control selectpicker" data-style="btn-green">
                  
-                                <!--   
-                                      @foreach ($gradoEstudios as $grado)
-                                      <option> {{ $grado->nivel }}</option>
+
+                                      @foreach ($areaConocimiento as $areaC)
+                                      <option> {{ $areaC->descripcion }}</option>
                                       @endforeach
-                                -->
+
                                     
                 	            </select></td>
                                 <td><input type="email" required class="form-control" id="correo1" placeholder=""/></td>
