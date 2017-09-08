@@ -27,12 +27,12 @@
                 <!-- Input descripcion -->
               	<div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="descripcion">Descripción / resumen:</label></div>
-                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="descripcion" rows="1" placeholder="Descripción o resumen del proyecto o tecnología"></textarea></div>
+                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="descripcion" rows="1" placeholder="Descripción o resumen del proyecto o tecnología" name="resumenProy"></textarea></div>
               	</div>   
       
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
-                	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green">
+                	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green" name="instEq">
                   		 @foreach ($institucion as $int)
                                         <option> {{ $int->nombreInstitucion }}</option>
                                           @endforeach
@@ -43,7 +43,7 @@
               
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
-                	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green">
+                	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green" name="tipoInv">
                   		 @foreach ($inv as $in)
                                         <option> {{ $in->descripcion }}</option>
                                           @endforeach
@@ -75,15 +75,15 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td><input type="text" class="form-control" required id="Nombre1" placeholder=""/></td>
-                                <td class="text-center"> <select id="estudios1" required class="form-control selectpicker" data-style="btn-green">
+                                <td><input type="text" class="form-control" required id="Nombre1" placeholder="" name="nomPart"/></td>
+                                <td class="text-center"> <select id="estudios1" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">
 
                                 @foreach ($gradoEstudios as $grado)
                                         <option> {{ $grado->nivel }}</option>
                                           @endforeach
 
                 	            </select></td>
-                                <td class="text-center"> <select id="area1" required class="form-control selectpicker" data-style="btn-green">
+                                <td class="text-center"> <select id="area1" required class="form-control selectpicker" data-style="btn-green" name="areaConocimiento">
                  
 
                                       @foreach ($areaConocimiento as $areaC)
@@ -92,10 +92,10 @@
 
                                     
                 	            </select></td>
-                                <td><input type="email" required class="form-control" id="correo1" placeholder=""/></td>
-                                <td><input type="tel" required class="form-control" id="telefono1" placeholder=""/></td>                        
+                                <td><input type="email" required class="form-control" id="correo1" placeholder="" name="correoPart"/></td>
+                                <td><input type="tel" required class="form-control" id="telefono1" placeholder="" name="telPart"/></td>
                                 <td class="text-center">
-                                    <select id="institucion1" required class="form-control selectpicker" data-style="btn-green">
+                                    <select id="institucion1" required class="form-control selectpicker" data-style="btn-green" name="instPart">
 
                                @foreach ($institucion as $ti)
                                         <option> {{ $ti->nombreInstitucion }}</option>

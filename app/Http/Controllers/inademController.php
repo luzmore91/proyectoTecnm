@@ -59,13 +59,25 @@ class inademController extends Controller
  public function insertar(Request $request)
  {
      //recuperar valores escritos en los campos
+
+     /* seccion 1 */
       $tituloProy = $request->input('tituloProy');
       $tituloCom = $request->input('tituloCom');
       $proRes = $request->input('proRes');
+      $resumenProy = $request->input('resumenProy');
+      $instEq = $request->input('instEq');
+      $tipoInv = $request->input('tipoInv');
 
+      //OBJETO EN TABLA
+      $nomPart = $request->input('nomPart');
+      $gradoEstP = $request->input('gradoEstP');
+      $arCon = $request->input('areaConocimiento');
+      $correoP = $request->input('correoPart');
+      $telPart = $request->input('telPart');
+      $instPart = $request->input('instPart');
 
-     // q obtengo
-     echo $tituloProy;
+     /* seccion 2 */
+
 
 }
 }
