@@ -54,21 +54,19 @@
 <div class="col-xs-2"><label style="font-style:italic"> Estado actual</label></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Opción 01</option>
-                  		<option>Opción 02</option>
-                  		<option>Opción 03</option>
-                	</select>
+        @foreach ($propInt as $itera)
+        <option> {{ $itera->descripcion }}</option>
+        @endforeach
+    </select>
 </div>
 
         <div class="col-xs-3"><label>En caso de que esté en proceso, revisión y otorgada la protección</label> <label style="font-style:italic">  favor de indicar el tipo de protección</label></div>
 <div class="col-xs-4">
- 	<select class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Opción 01</option>
-                  		<option>Opción 02</option>
-                  		<option>Opción 03</option>
-                	</select>
+    <select class="form-control selectpicker" data-style="btn-green">
+        @foreach ($prot as $itera)
+        <option> {{ $itera->descripcion }}</option>
+        @endforeach
+    </select>
 </div>
 
 </div>
