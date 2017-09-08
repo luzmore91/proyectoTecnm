@@ -53,4 +53,11 @@ class inademController extends Controller
         //mostrar vista y catalogos 
         return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy,"prot" =>  $prot,"riesgos" => $riesgos]);
     }
+
+
+    //validando formularios en laravel
+ public function insertar()
+ {
+
+}
 }

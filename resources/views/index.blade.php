@@ -16,7 +16,9 @@
             @include('header')
         </div>
 
-        <form name="formRegistro" method="post" action="">
+        {!! Form::open(array('action' => 'inademController@insertar')) !!}
+
+
             <!--Tecnologia o Proyecto y Equipo Emprendedor o Inventor-->
             <div class="container">
                 @include('tecnologiaEquipoEmprendedor')
@@ -59,7 +61,7 @@
                 </div>
             </div>
 
-        </form>
+        {!! Form::close() !!}
 
         <div class="container">
             @include('footer')
