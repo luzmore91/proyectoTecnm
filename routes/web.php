@@ -28,3 +28,6 @@ Route::get('/','inademController@ver');
 Route::get('admin', function () {
     return view('admin');
 });
+
+//// enrutamiento de la accion
+Route::post('/inadem/insertar', 'inademController@insertar');
