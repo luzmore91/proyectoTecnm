@@ -13,10 +13,9 @@
 <div class="col-xs-5" style="padding-bottom:20px" >
 
  	<select class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Opción 01</option>
-                  		<option>Opción 02</option>
-                  		<option>Opción 03</option>
+                  		 @foreach ($TRL as $trl)
+                                        <option> {{ $trl->descripcion }}</option>
+                                          @endforeach
                 	</select>
 </div>
     </div>
@@ -33,10 +32,9 @@
            <div class="col-xs-12">
 <div class="col-xs-5" style="padding-bottom:20px" >
  	<select class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Opción 01</option>
-                  		<option>Opción 02</option>
-                  		<option>Opción 03</option>
+                  		@foreach ($sector as $sector)
+                                        <option> {{ $sector->descripcion }}</option>
+                                          @endforeach
                 	</select>
 
 </div>
