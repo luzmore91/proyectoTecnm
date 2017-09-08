@@ -86,10 +86,9 @@
            <div class="col-xs-2"></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green">
-                  		<option>Seleccione una opción</option>
-                  		<option>Opción 01</option>
-                  		<option>Opción 02</option>
-                  		<option>Opción 03</option>
+                  		 @foreach ($objProy as $op)
+                                        <option> {{ $op->descripcion }}</option>
+                                          @endforeach
                 	</select>
 </div>
 
