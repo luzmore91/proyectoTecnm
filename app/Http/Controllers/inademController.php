@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Http\Request;
 
 
 class inademController extends Controller
@@ -56,8 +56,16 @@ class inademController extends Controller
 
 
     //validando formularios en laravel
- public function insertar()
+ public function insertar(Request $request)
  {
+     //recuperar valores escritos en los campos
+      $tituloProy = $request->input('tituloProy');
+      $tituloCom = $request->input('tituloCom');
+      $proRes = $request->input('proRes');
+
+
+     // q obtengo
+     echo $tituloProy;
 
 }
 }

@@ -12,17 +12,17 @@
             	<!-- Input titulo -->
                 <div class="col-xs-12" style="padding-top: 20px;">
                     <div class="col-xs-2"><label for="titulo" >Título:</label></div> 
-                    <div class="col-xs-10"><textarea style="resize: vertical" class="form-control"  required id="titulo" rows="1" placeholder="Título del proyecto o tecnología"></textarea></div>
+                    <div class="col-xs-10"><textarea style="resize: vertical" class="form-control"  required id="titulo" rows="1" placeholder="Título del proyecto o tecnología" name="tituloProy"></textarea></div>
                 </div>
             	<!-- Input titulo comercial -->
               	<div class="col-xs-12" style="padding-top: 20px;">
                 	 <div class="col-xs-2"><label for="tituloComercial">Título comercial:</label></div>
-                	 <div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="tituloComercial" rows="1" placeholder="Titulo comercial del proyecto o tecnología"></textarea></div>
+                	 <div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="tituloComercial" rows="1" placeholder="Titulo comercial del proyecto o tecnología" name="tituloCom"></textarea></div>
               	</div>
             	<!-- Input problematica -->
               	<div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="problematica">Problematica a resolver:</label></div>
-                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="problematica" rows="1" placeholder="Problematica que resolvera"></textarea></div>
+                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="problematica" rows="1" placeholder="Problematica que resolvera" name="proRes"></textarea></div>
               	</div>
                 <!-- Input descripcion -->
               	<div class="col-xs-12" style="padding-top: 20px;">

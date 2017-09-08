@@ -30,4 +30,4 @@ Route::get('admin', function () {
 });
 
 //// enrutamiento de la accion
-Route::post('/inadem/insertar', 'inademController@insertar');
+Route::post('/insertar', 'inademController@insertar');
