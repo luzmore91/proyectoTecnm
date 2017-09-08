@@ -85,11 +85,11 @@
                 	            </select></td>
                                 <td class="text-center"> <select id="area1" required class="form-control selectpicker" data-style="btn-green">
                  
-                                <!--   
-                                      @foreach ($gradoEstudios as $grado)
-                                      <option> {{ $grado->nivel }}</option>
+
+                                      @foreach ($areaConocimiento as $areaC)
+                                      <option> {{ $areaC->descripcion }}</option>
                                       @endforeach
-                                -->
+
                                     
                 	            </select></td>
                                 <td><input type="email" required class="form-control" id="correo1" placeholder=""/></td>
@@ -105,102 +105,7 @@
 
 
                             </tr>
-                            <tr>
-                                <td><input type="text" class="form-control" required id="Nombre2" placeholder=""/></td>
-                                <td class="text-center"> <select id="estudios2" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Estudiante</option>
-                  		          <option>Licenciatura</option>
-                  		          <option>Maestria</option>
-                                  <option>Doctorado</option>
-                	            </select></td>
-                                <td class="text-center"> <select id="area2" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Opción 01</option>
-                  		          <option>Opción 02</option>
-                  		          <option>Opción 03</option>
-                	            </select></td>
-                                <td><input type="email" required class="form-control" id="correo2" placeholder=""/></td>
-                                <td><input type="tel" required class="form-control" id="telefono2" placeholder=""/></td>  
-                                <td class="text-center"> <select required id="institucion2" class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Instituto Tecnológico de Aguascalientes</option>
-                  		          <option>Instituto Tecnológico de Ensenada</option>
-                  		          <option>Instituto Tecnológico de Zacatepec</option>
-                	            </select></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" class="form-control" required id="Nombre3" placeholder=""/></td>
-                                <td class="text-center"> <select id="estudios3" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Estudiante</option>
-                  		          <option>Licenciatura</option>
-                  		          <option>Maestria</option>
-                                  <option>Doctorado</option>
-                	            </select></td>
-                                <td class="text-center"> <select id="area3" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Opción 01</option>
-                  		          <option>Opción 02</option>
-                  		          <option>Opción 03</option>
-                	            </select></td>
-                                <td><input type="email" required class="form-control" id="correo3" placeholder=""/></td>
-                                <td><input type="tel" required class="form-control" id="telefono3" placeholder=""/></td>  
-                                <td class="text-center"> <select id="institucion3" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Instituto Tecnológico de Aguascalientes</option>
-                  		          <option>Instituto Tecnológico de Ensenada</option>
-                  		          <option>Instituto Tecnológico de Zacatepec</option>
-                	            </select></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" required class="form-control" id="Nombre4" placeholder=""/></td>
-                                <td class="text-center"> <select  id="estudios4" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Estudiante</option>
-                  		          <option>Licenciatura</option>
-                  		          <option>Maestria</option>
-                                  <option>Doctorado</option>
-                	            </select></td>
-                                <td class="text-center"> <select id="area4" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option> 
-                  		          <option>Opción 02</option>
-                  		          <option>Opción 03</option>
-                	            </select></td>
-                                <td><input type="email" required class="form-control" id="correo4" placeholder=""/></td>
-                                <td><input type="tel" required class="form-control" id="telefono4" placeholder=""/></td>  
-                                <td class="text-center"> <select id="institucion4" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Instituto Tecnológico de Aguascalientes</option>
-                  		          <option>Instituto Tecnológico de Ensenada</option>
-                  		          <option>Instituto Tecnológico de Zacatepec</option>
-                	            </select></td>
-                            </tr>
-                            <tr>
-                                <td><input type="text" required class="form-control" id="Nombre5" placeholder=""/></td>
-                                <td class="text-center"> <select id="estudios5" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Estudiante</option>
-                  		          <option>Licenciatura</option>
-                  		          <option>Maestria</option>
-                                  <option>Doctorado</option>
-                	            </select></td>
-                                <td class="text-center"> <select id="area5" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Opción 01</option>
-                  		          <option>Opción 02</option>
-                  		          <option>Opción 03</option>
-                	            </select></td>
-                                <td><input type="email" required class="form-control" id="correo5" placeholder=""/></td>
-                                <td><input type="tel" required class="form-control" id="telefono5" placeholder=""/></td>  
-                                <td class="text-center"> <select id="institucion5" required class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Instituto Tecnológico de Aguascalientes</option>
-                  		          <option>Instituto Tecnológico de Ensenada</option>
-                  		          <option>Instituto Tecnológico de Zacatepec</option>
-                	            </select></td>
-                            </tr>
+
                         </tbody>
                     </table>        
             </div>

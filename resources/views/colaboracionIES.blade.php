@@ -38,79 +38,17 @@
                         <tbody>
                              <tr>
                                 <td class="text-center"> <select id="estudios1" class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Tecnológico</option>
-                  		          <option>Operativo</option>
-                  		          <option>Legal</option>
-                                  <option>Ecológico</option>
-                                  <option>Social</option>
-                                  <option>De negocio</option>
-                                  <option>Otro</option>
+                  		          @foreach ($riesgos as $ri)
+                                        <option> {{ $ri->descripcion }}</option>
+                                          @endforeach
                 	            </select></td>
                 <td><textarea class="form-control" id="Decripcion1" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
                 <td><textarea class="form-control" id="Estrategia1" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
                    
         
                        
-                             <tr>
-                                <td class="text-center"> <select id="estudios1" class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Tecnológico</option>
-                  		          <option>Operativo</option>
-                  		          <option>Legal</option>
-                                  <option>Ecológico</option>
-                                  <option>Social</option>
-                                  <option>De negocio</option>
-                                  <option>Otro</option>
-                	            </select></td>
-                <td><textarea class="form-control" id="Decripcion2" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
-                <td><textarea class="form-control" id="Estrategia2" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
-            
-                       
-                             <tr>
-                                <td class="text-center"> <select id="estudios1" class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Tecnológico</option>
-                  		          <option>Operativo</option>
-                  		          <option>Legal</option>
-                                  <option>Ecológico</option>
-                                  <option>Social</option>
-                                  <option>De negocio</option>
-                                  <option>Otro</option>
-                	            </select></td>
-                <td><textarea class="form-control" id="Decripcion3" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
-                <td><textarea class="form-control" id="Estrategia3" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
-                                 
-                  
-                             <tr>
-                                <td class="text-center"> <select id="estudios1" class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Tecnológico</option>
-                  		          <option>Operativo</option>
-                  		          <option>Legal</option>
-                                  <option>Ecológico</option>
-                                  <option>Social</option>
-                                  <option>De negocio</option>
-                                  <option>Otro</option>
-                	            </select></td>
-                <td><textarea class="form-control" id="Decripcion4" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
-                <td><textarea class="form-control" id="Estrategia4" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
-            
-                        
-                             <tr>
-                                <td class="text-center"> <select id="estudios1" class="form-control selectpicker" data-style="btn-green">
-                  		          <option>Seleccione una opción</option>
-                  		          <option>Tecnológico</option>
-                  		          <option>Operativo</option>
-                  		          <option>Legal</option>
-                                  <option>Ecológico</option>
-                                  <option>Social</option>
-                                  <option>De negocio</option>
-                                  <option>Otro</option>
-                	            </select></td>
-                <td><textarea class="form-control" id="Decripcion5" placeholder="Descripción" style="resize: none" title="Se requiere una descripción" required></textarea></td>
-                <td><textarea class="form-control" id="Estrategia5" placeholder="Estrategia" style="resize: none" title="Se requiere una estrategia" required="required" ></textarea></td>
-            </tr> 
+
+
             </tbody>
 </table></div>
 
