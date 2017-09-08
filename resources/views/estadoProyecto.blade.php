@@ -12,7 +12,7 @@
 <div class="col-xs-12">
 <div class="col-xs-5" style="padding-bottom:20px" >
 
- 	<select class="form-control selectpicker" data-style="btn-green">
+ 	<select class="form-control selectpicker" data-style="btn-green" name="madurezProy">
                   		 @foreach ($TRL as $trl)
                                         <option> {{ $trl->descripcion }}</option>
                                           @endforeach
@@ -31,7 +31,7 @@
 
            <div class="col-xs-12">
 <div class="col-xs-5" style="padding-bottom:20px" >
- 	<select class="form-control selectpicker" data-style="btn-green">
+ 	<select class="form-control selectpicker" data-style="btn-green" name="sectorEst">
                   		@foreach ($sector as $sector)
                                         <option> {{ $sector->descripcion }}</option>
                                           @endforeach
@@ -53,7 +53,7 @@
 
 <div class="col-xs-2"><label style="font-style:italic"> Estado actual</label></div>
 <div class="col-xs-3">
- 	<select class="form-control selectpicker" data-style="btn-green">
+ 	<select class="form-control selectpicker" data-style="btn-green" name="estadoAct">
         @foreach ($propInt as $itera)
         <option> {{ $itera->descripcion }}</option>
         @endforeach
@@ -62,7 +62,7 @@
 
         <div class="col-xs-3"><label>En caso de que esté en proceso, revisión y otorgada la protección</label> <label style="font-style:italic">  favor de indicar el tipo de protección</label></div>
 <div class="col-xs-4">
-    <select class="form-control selectpicker" data-style="btn-green">
+    <select class="form-control selectpicker" data-style="btn-green" name="tipoProt">
         @foreach ($prot as $itera)
         <option> {{ $itera->descripcion }}</option>
         @endforeach
@@ -83,7 +83,7 @@
 
            <div class="col-xs-2"></div>
 <div class="col-xs-3">
- 	<select class="form-control selectpicker" data-style="btn-green">
+ 	<select class="form-control selectpicker" data-style="btn-green" name="perProy">
                   		 @foreach ($objProy as $op)
                                         <option> {{ $op->descripcion }}</option>
                                           @endforeach
@@ -92,7 +92,7 @@
 
         <div class="col-xs-3"><label>En caso de seleccionar la opción "Otro", describir en el recuadro anexo.</label> </div>
 <div class="col-xs-4">
- 	 <input class="form-control" type="text" name="otro_ObjetivoProyecto"  required placeholder="¿Qué persigue el proyecto o tecnologia?"/>
+ 	 <input class="form-control" type="text" name="otro_ObjetivoProyecto" name="otroPerProy"  placeholder="¿Qué persigue el proyecto o tecnologia?"/>
 </div>
 
 </div>

@@ -69,6 +69,8 @@ class inademController extends Controller
       $tipoInv = $request->input('tipoInv');
 
       //OBJETO EN TABLA
+      // Crear arreglo donde se inserten estos campos
+     //sustituir estos cambios
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');
       $arCon = $request->input('areaConocimiento');
@@ -77,7 +79,23 @@ class inademController extends Controller
       $instPart = $request->input('instPart');
 
      /* seccion 2 */
+       $madurezProy = $request->input('madurezProy');
+       $sectorEst = $request->input('sectorEst');
+       $estadoAct = $request->input('estadoAct');
+       $tipoProt = $request->input('tipoProt');
+       $perProy = $request->input('perProy');
+       $otroPerProy = $request->input('otroPerProy');
 
+     /* seccion 3 */
+      $desIES = $request->input('desIES');
+       //crear objeto para la insercion automatica de N columnas
+       //sustituir estos cambios
+      $tipoRiesgo = $request->input('tipoRiesgo');
+      $descRiesgo = $request->input('descRiesgo');
+      $estMitigacion = $request->input('estMitigacion');
+       //fin de objeto tabla
+      $analisisEnt = $request->input('analisisEnt');
 
+     /* seccion 3 */
 }
 }
