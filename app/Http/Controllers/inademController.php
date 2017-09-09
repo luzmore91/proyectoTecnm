@@ -63,9 +63,13 @@ class inademController extends Controller
     //Arreglo
      $convocatoria = new Convocatoria;
 
-      $convocatoria->tituloProy = Input::get('tituloProy');
-    $convocatoria->tituloCom = Input::get('tituloCom');
-    $convocatoria->proRes = Input::get(Input::get('proRes'));
+      $convocatoria->titulo = Input::get('titulo');
+    $convocatoria->tituloComercial = Input::get('tituloComercial');
+    $convocatoria->problematica = Input::get(Input::get('problematica'));
+     $convocatoria->descripcion =  Input::get(Input::get('descripcion'));
+     $convocatoria->fk_idInstitucion = Input::get(Input::get('instEq'));
+      $convocatoria->fk_idTipoInvencion = Input::get(Input::get('tipoInv'));
+     $convocatoria->bajaLogica = 0;
     $convocatoria->save();
 
    return 'El registro ha sido modificado';
@@ -73,12 +77,6 @@ class inademController extends Controller
      echo $convocatoria;
 
      /* seccion 1 */
-      $tituloProy = $request->input('tituloProy');
-      $tituloCom = $request->input('tituloCom');
-      $proRes = $request->input('proRes');
-      $resumenProy = $request->input('resumenProy');
-      $instEq = $request->input('instEq');
-      $tipoInv = $request->input('tipoInv');
 
       //OBJETO EN TABLA
       // Crear arreglo donde se inserten estos campos

@@ -7,5 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Convocatoria extends Model
 {
     //
-    protected $table = 'convo';
+    protected $table = 'tecnologiaProyecto';
+    public $timestamps = false;
 }
