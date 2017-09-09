@@ -104,5 +104,8 @@ class inademController extends Controller
       $usoApp = $request->input('usoApp');
       $viabilidad = $request->input('viabilidad');
       $beneficios = $request->input('beneficios');
+
+
+    return \Redirect::route('')->with('success', 'Book favorited!');
 }
 }
