@@ -60,6 +60,7 @@ class inademController extends Controller
  {
      //recuperar valores escritos en los campos
 
+
      /* seccion 1 */
       $tituloProy = $request->input('tituloProy');
       $tituloCom = $request->input('tituloCom');
@@ -105,7 +106,6 @@ class inademController extends Controller
       $viabilidad = $request->input('viabilidad');
       $beneficios = $request->input('beneficios');
 
-
-    return \Redirect::route('')->with('success', 'Book favorited!');
+       //DB::insert('INSERT INTO version_authors (credit_id) VALUES (?)', array($credit_id));
 }
 }
