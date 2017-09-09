@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Input;
+use App\Convocatoria;
 
 class inademController extends Controller
 {
@@ -59,7 +60,17 @@ class inademController extends Controller
  public function insertar(Request $request)
  {
      //recuperar valores escritos en los campos
+    //Arreglo
+     $convocatoria = new Convocatoria;
 
+      $convocatoria->tituloProy = Input::get('tituloProy');
+    $convocatoria->tituloCom = Input::get('tituloCom');
+    $convocatoria->proRes = Input::get(Input::get('proRes'));
+    $convocatoria->save();
+
+   return 'El registro ha sido modificado';
+     echo "heelloo ";
+     echo $convocatoria;
 
      /* seccion 1 */
       $tituloProy = $request->input('tituloProy');
