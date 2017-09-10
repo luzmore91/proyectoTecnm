@@ -51,7 +51,7 @@
 
 <div class="col-xs-12" style="padding-top:20px">
 
-<div class="col-xs-2"><label style="font-style:italic"> Estado actual</label></div>
+<div class="col-xs-2"><label> Estado actual</label></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green" name="estadoAct">
         @foreach ($propInt as $itera)
