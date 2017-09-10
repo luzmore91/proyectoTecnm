@@ -32,3 +32,7 @@ Route::get('admin', function () {
 //// enrutamiento de la accion
 Route::post('/insertar', 'inademController@insertar');
 
+
+#DataTables - Admin
+Route::get('datatable', ['uses'=>'PostController@datatable']);
+Route::get('datatable/getposts', ['as'=>'datatable.getposts','uses'=>'PostController@getPosts']);

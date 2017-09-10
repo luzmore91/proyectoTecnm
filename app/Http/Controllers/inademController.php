@@ -89,15 +89,6 @@ class inademController extends Controller
     $tecnologia->fk_idSector = Input::get("sectorEst");
     $tecnologia->bajaLogica = 1;
 
-       //OBJETO EN TABLA
-      // Crear arreglo donde se inserten estos campos
-     //sustituir estos cambios
-      $nomPart = $request->input('nomPart');
-      $gradoEstP = $request->input('gradoEstP');
-      $arCon = $request->input('areaConocimiento');
-      $correoP = $request->input('correoPart');
-      $telPart = $request->input('telPart');
-      $instPart = $request->input('instPart');
 
      //Tabla propiedad intelectual
       $propInt->fk_idTipoRegistro =  Input::get("estadoAct");
@@ -120,15 +111,25 @@ class inademController extends Controller
      $objP->otraDescripcion=Input::get('otro_ObjetivoProyecto');
      $objP->bajaLogica=1;
 
-     //Tabla colaboracion
-     $col->fk_Institucion
+
+     //Tabla Participantes
+      //OBJETO EN TABLA
+      // Crear arreglo donde se inserten estos campos
+     //sustituir estos cambios
+      $nomPart = $request->input('nomPart');
+      $gradoEstP = $request->input('gradoEstP');
+      $arCon = $request->input('areaConocimiento');
+      $correoP = $request->input('correoPart');
+      $telPart = $request->input('telPart');
+      $instPart = $request->input('instPart');
+
+       //Tabla colaboracion
+/*     $col->fk_Institucion
      $col->descripcion = Input::get('desIES');
      $col->fk_idEquipoEmprendedor
      $col->bajaLogica = 1;
 
-     //Tabla Participantes
-
-
+*/
      //Tabla proyecto
      $proyecto->fk_idEquipoEmprendedor=Input::get('madurezProy');
     /*

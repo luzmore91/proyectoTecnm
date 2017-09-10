@@ -178,6 +178,10 @@ return [
         App\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
 
+        /*
+        *DataTable ddel Admin
+        */
+        Yajra\Datatables\DatatablesServiceProvider::class,
 
     ],
 
@@ -229,6 +233,11 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => 'Collective\Html\FormFacade',
         'Html' => 'Collective\Html\HtmlFacade',
+
+        /*
+        *Data Table de Admin
+        */
+        'Datatables' => 'Yajra\Datatables\Facades\Datatables',
 
     ],
 
