@@ -9,13 +9,15 @@ function obtenerDatosEquipo()
     var telefonoMovil = document.getElementById("telPart").value;
     var institucion = document.getElementById("instPart").value;
      
+
     var tbody = document.getElementById("altaEquipo");
     var tr = document.createElement('tr');
     count_tr++;
     
+
     tr.id= "miembro_" + count_tr;
     
-    var info = "<td classs='' id='nombreParticipante_"+ count_tr +"' name='nombreParticipante_"+ count_tr +"'>"+ nombreMiembro+"</td>";
+    var info = "<td classs='' id='nombreParticipante_"+ count_tr +"' name='nombreParticipante_"+ count_tr +"'><input name="'cont'" style="'display: none;'" value='"count_tr"'/>"+ nombreMiembro+"</td>";
     
 	info += "<td classs='' id='gradoEstudioParticipante_"+ count_tr +"' name='gradoEstudioParticipante_"+ count_tr +"'>"+ gradoEstudio+"</td>";
   

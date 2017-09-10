@@ -27,8 +27,13 @@
     </thead>
     <tbody>
     <tr>
-    <td>Elemento1</td><td>Elemento2</td><td>Elemento3</td><td>Elemento4</td><td>Elemento5</td>
+        <td>Elemento1</td>
+        <td>Elemento2</td>
+        <td>Elemento3</td>
+        <td align="center"><button type="button" class="btn btn-primary">Actualizar</button></td>
+        <td align="center"><button type="button" class="btn btn-danger">Eliminar</button></td>
     </tr>
+
     </tbody>
   </table>
 </div>
@@ -41,6 +46,7 @@ $(document).ready(function() {
             "language": {
             "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"      
             }
+
     
     //Obtener datos para llenar la tabla   
 /*
