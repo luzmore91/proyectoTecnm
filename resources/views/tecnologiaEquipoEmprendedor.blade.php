@@ -8,7 +8,7 @@
               <span class="glyphicon glyphicon-question-sign"></span>
            </button></div>
     </div>
-
+      
             	<!-- Input titulo -->
                 <div class="col-xs-12" style="padding-top: 20px;">
                     <div class="col-xs-2"><label for="titulo" >Título:</label></div> 
@@ -34,9 +34,8 @@
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
                 	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green" name="instEq">
                   		 @foreach ($institucion as $int)
-                                        <option value="{{$int->idInstitucion}}"> {{ $int->nombreInstitucion }}</option>
-                                          @endforeach
-
+                        <option> {{ $int->nombreInstitucion }}</option>
+                        @endforeach
                 	</select>
                     </div>
             </div>  
@@ -44,70 +43,92 @@
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
                 	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green" name="tipoInv">
-                  		 @foreach ($inv as $in)
-                                        <option value="{{$in->idTipoInvencion}}"> {{ $in->descripcion }}</option>
-                                          @endforeach
+                  		@foreach ($inv as $in)
+                        <option> {{ $in->descripcion }}</option>
+                        @endforeach
                 	</select>
                     </div>
             </div> 
                     
-        <div class="col-xs-12" style="padding-top: 20px;"></div>
+    <div class="col-xs-12" style="padding-top: 20px;"></div>
 
-          <div class="espacioTitulosContenido">
+   <div class="espacioTitulosContenido">
     <div class="col-xs-4"><h2>1. Equipo emprendedor / inventor</h2></div>
-   <div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
+       <div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
               data-container="body" data-toggle="popover" data-placement="right"
               data-content="Captura la información solicitada del equipo que esta participando en el proyecto o tecnologia">
               <span class="glyphicon glyphicon-question-sign"></span>
            </button></div>
     </div>
+      
+      <!-- Tabla para agregar usuarios-->
       <div class="col-xs-12">
-        <table id="altaEquipo" class="table table-striped table-hover sortable">
-                        <thead>
-                            <tr>
-                                <th>Nombre</th>
-                                <th>Último grado de estudios</th>
-                                <th>Área de conocimiento</th>
-                                <th>Correo electronico</th>
-                                <th>Número celular personal</th>
-                                <th>Institución</th>                              
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type="text" class="form-control" required id="Nombre1" placeholder="" name="nomPart"/></td>
-                                <td class="text-center"> <select id="estudios1" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">
-
-                                @foreach ($gradoEstudios as $grado)
-                                        <option> {{ $grado->nivel }}</option>
-                                          @endforeach
-
-                	            </select></td>
-                                <td class="text-center"> <select id="area1" required class="form-control selectpicker" data-style="btn-green" name="areaConocimiento">
-                 
-
-                                      @foreach ($areaConocimiento as $areaC)
-                                      <option> {{ $areaC->descripcion }}</option>
-                                      @endforeach
-
-                                    
-                	            </select></td>
-                                <td><input type="email" required class="form-control" id="correo1" placeholder="" name="correoPart"/></td>
-                                <td><input type="tel" required class="form-control" id="telefono1" placeholder="" name="telPart"/></td>
-                                <td class="text-center">
-                                    <select id="institucion1" required class="form-control selectpicker" data-style="btn-green" name="instPart">
-
-                               @foreach ($institucion as $ti)
-                                        <option> {{ $ti->nombreInstitucion }}</option>
-                                          @endforeach
-                	            </select>
-                                </td>
-
-
-                            </tr>
-
-                        </tbody>
-                    </table>        
-            </div>
+                
+          <div class="col-xs-2"><label for="Nombre" >Nombre</label></div>
+          
+          <div class="col-xs-2"><label for="gradoEstudios" >Último grado de estudios</label></div>
+          
+          <div class="col-xs-2"><label for="areaConocimiento" >Área de conocimiento</label></div>
+          
+          <div class="col-xs-2"><label for="correo" >Correo electronico</label></div>
+          
+          <div class="col-xs-2"><label for="noCelular" >Número celular personal</label></div>
+          
+          <div class="col-xs-2"><label for="intitucion" >Institución</label></div>
+                         
+      </div>
+      
+      <div class="col-xs-12">
+          <div class="col-xs-2"><input type="text" class="form-control" required id="nomPart" placeholder="" name="nomPart"/></div>
+          
+          <div class="col-xs-2"><select id="gradoEstP" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">          
+              @foreach ($gradoEstudios as $grado)
+              <option> {{ $grado->nivel }}</option>
+              @endforeach
+          </select></div>
+          
+          <div class="col-xs-2"><select id="areaConocimiento" required class="form-control selectpicker" data-style="btn-green" name="areaConocimiento"> 
+               @foreach ($areaConocimiento as $areaC)
+               <option> {{ $areaC->descripcion }}</option>
+               @endforeach                                    
+          </select></div>
+          
+          <div class="col-xs-2"><input type="email" required class="form-control" id="correoPart" placeholder="" name="correoPart"/>
           </div>
-                 
+          
+          <div class="col-xs-2"><input type="tel" required class="form-control" id="telPart" placeholder="" name="telPart"/>
+          </div>
+          
+          <div class="col-xs-2"><select id="instPart" required class="form-control selectpicker" data-style="btn-green" name="instPart">
+              @foreach ($institucion as $ti)
+              <option> {{ $ti->nombreInstitucion }}</option> 
+              @endforeach
+          </select></div>     
+          
+        
+      </div>
+      <div class="col-xs-12 text-right">
+        <button type="submit" class="btn btn-blue" onclick="obtenerDatosEquipo()" style="margin-top: 10px; margin-right: 15px;" >
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+      </div>
+
+      
+      <div class="col-xs-12" style="padding-top: 20px;">
+        <table id="altaEquipo" class="table table--bordered table-hover sortable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Último grado de estudios</th>
+                    <th>Área de conocimiento</th>
+                    <th>Correo electronico</th>
+                    <th>Número celular personal</th>
+                    <th>Institución</th>
+                    <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla">     
+            </tbody>
+          </table>     
+      </div>
+</div>
