@@ -15,13 +15,22 @@ use App\ObjetivoProyecto;
 use App\Colaboracion;
 use App\EquipoEmprendedor;
 use App\Participante;
+use App\Riesgos;
+
 
 class inademController extends Controller
 {
+
+     protected $participante;
+ ///funcion que obtiene el contenido de la tabla
+
+
+
     
     ///desplegar vista desde el controlador 
     public function ver()
     { /// Consulta los catalogos de la BD 
+
         
       ///////////PARTE 0///////////
         //--- catalogo Institucion---//
@@ -62,6 +71,7 @@ class inademController extends Controller
         //mostrar vista y catalogos 
         return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy,"prot" =>  $prot,"riesgos" => $riesgos]);
     }
+
 
 
     //validando formularios en laravel
@@ -117,6 +127,13 @@ class inademController extends Controller
       //OBJETO EN TABLA
       // Crear arreglo donde se inserten estos campos
      //sustituir estos cambios
+
+    //obtener tamaño de la tabla
+
+     $num = $request->input('cont');
+
+     echo "valor : "+$num;
+
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');
       $arCon = $request->input('areaConocimiento');
@@ -132,7 +149,7 @@ class inademController extends Controller
 */
 
      //Tabla Riesgos
-     $dataRiesgos = [];
+  /*   $dataRiesgos = [];
     foreach ($checkBox as $sa) {
     $dataRiesgos[] = [
         'estrategiaMitigacion'  => $sa,
@@ -142,9 +159,10 @@ class inademController extends Controller
         'bajaLogica'       => 1
     ];
 }
+*/
 
-$riesgos->insert($dataRiesgos);
-
+//$riesgos->insert($dataRiesgos);
+/*
      $riesgos->estrategiaMitigacion=Input::get('estMitigacion');
      $riesgos->descripcion=Input::get('descRiesgo');
      $riesgos->fk_idCatalogoRiesgo=Input::get('descRiesgo');

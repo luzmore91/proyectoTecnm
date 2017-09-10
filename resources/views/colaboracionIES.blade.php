@@ -39,7 +39,7 @@
                              <tr>
                                 <td class="text-center"> <select id="estudios1" class="form-control selectpicker" name="tipoRiesgo0" data-style="btn-green">
                   		          @foreach ($riesgos as $ri)
-                                        <option value="{{$ri->idRiesgo}}"> {{ $ri->descripcion }}</option>
+                                        <option value=""> {{ $ri->descripcion }}</option>
                                           @endforeach
                 	            </select></td>
                 <td><textarea class="form-control" id="Decripcion1" placeholder="Descripción" name="descRiesgo0" style="resize: none" title="Se requiere una descripción" required></textarea></td>
