@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use App\Tecnologia;
 use App\Institucion;
+use App\Proyecto;
+use App\PropiedadIntelectual;
 
 class inademController extends Controller
 {
@@ -61,9 +63,11 @@ class inademController extends Controller
  public function insertar(Request $request)
  {
      //recuperar valores escritos en los campos
-    //Arreglo
+    //Arreglos
      $tecnologia = new Tecnologia;
-
+     $proyecto = new Proyecto;
+     $propInt = new PropiedadIntelectual;
+    /* Tabla tecnologia  */
     $tecnologia->titulo = Input::get('titulo');
     $tecnologia->tituloComercial = Input::get('tituloComercial');
     $tecnologia->problematica = Input::get('problematica');
@@ -74,16 +78,7 @@ class inademController extends Controller
     $tecnologia->fk_idSector = Input::get("sectorEst");
     $tecnologia->bajaLogica = 1;
 
-
-    $tecnologia->save();
-
-   return 'El registro ha sido modificado';
-     echo "heelloo ";
-     echo $tecnologia;
-
-     /* seccion 1 */
-
-      //OBJETO EN TABLA
+       //OBJETO EN TABLA
       // Crear arreglo donde se inserten estos campos
      //sustituir estos cambios
       $nomPart = $request->input('nomPart');
@@ -93,9 +88,32 @@ class inademController extends Controller
       $telPart = $request->input('telPart');
       $instPart = $request->input('instPart');
 
+     //Tabla propiedad intelectual
+      $propInt->fk_idTipoRegisto =  Input::get("estadoAct");
+      $propInt->kf_idTipoProteccion =  Input::get("tipoProt");
+      $propInt->numeroRegistro = '';
+      $propInt->bajaLogica =1;
+     //Tabla proyecto
+     $proyecto->fk_idEquipoEmprendedor=Input::get('madurezProy');
+     $proyecto->fk_idColaboracion
+     $proyecto->fk_idPropiedadIntelectual =
+     $proyecto->fk_idObjetivoProyecto
+     $proyecto->fk_idAnalisisEntorno
+     $proyecto->fk_idTRL
+     $proyecto->fk_idTecnologiaProyecto
+     $proyecto->fk_idTecnologiaProyecto
+     $proyecto->estrategiaMitigacion
+     $proyecto->descripcionRiesgo
+     $proyecto->bajaLogica
+
+
+
+
+
+
      /* seccion 2 */
        $madurezProy = $request->input('madurezProy');
-       $sectorEst = $request->input('sectorEst');
+
        $estadoAct = $request->input('estadoAct');
        $tipoProt = $request->input('tipoProt');
        $perProy = $request->input('perProy');
@@ -119,6 +137,8 @@ class inademController extends Controller
       $usoApp = $request->input('usoApp');
       $viabilidad = $request->input('viabilidad');
       $beneficios = $request->input('beneficios');
+
+       $tecnologia->save();
 
        //DB::insert('INSERT INTO version_authors (credit_id) VALUES (?)', array($credit_id));
 }
