@@ -132,6 +132,18 @@ class inademController extends Controller
 */
 
      //Tabla Riesgos
+     $dataRiesgos = [];
+    foreach ($checkBox as $sa) {
+    $dataRiesgos[] = [
+        'estrategiaMitigacion'  => $sa,
+        'descripcion'    => $sa,
+        'fk_idCatalogoRiesgo'       => $sa,
+        'fk_idProyecto'       => '',
+        'bajaLogica'       => 1
+    ];
+}
+
+$riesgos->insert($dataRiesgos);
 
      $riesgos->estrategiaMitigacion=Input::get('estMitigacion');
      $riesgos->descripcion=Input::get('descRiesgo');
