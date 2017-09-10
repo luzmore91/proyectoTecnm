@@ -33,7 +33,7 @@
 <div class="col-xs-5" style="padding-bottom:20px" >
  	<select class="form-control selectpicker" data-style="btn-green" name="sectorEst">
                   		@foreach ($sector as $sector)
-                                        <option> {{ $sector->descripcion }}</option>
+                                        <option value="{{$sector->idSector}}"> {{ $sector->descripcion }}</option>
                                           @endforeach
                 	</select>
 

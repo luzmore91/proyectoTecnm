@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Convocatoria;
+use App\Tecnologia;
+use App\Institucion;
 
 class inademController extends Controller
 {
@@ -61,20 +62,24 @@ class inademController extends Controller
  {
      //recuperar valores escritos en los campos
     //Arreglo
-     $convocatoria = new Convocatoria;
+     $tecnologia = new Tecnologia;
 
-      $convocatoria->titulo = Input::get('titulo');
-    $convocatoria->tituloComercial = Input::get('tituloComercial');
-    $convocatoria->problematica = Input::get(Input::get('problematica'));
-     $convocatoria->descripcion =  Input::get(Input::get('descripcion'));
-     $convocatoria->fk_idInstitucion = Input::get(Input::get('instEq'));
-      $convocatoria->fk_idTipoInvencion = Input::get(Input::get('tipoInv'));
-     $convocatoria->bajaLogica = 0;
-    $convocatoria->save();
+    $tecnologia->titulo = Input::get('titulo');
+    $tecnologia->tituloComercial = Input::get('tituloComercial');
+    $tecnologia->problematica = Input::get('problematica');
+    $tecnologia->descripcion =  Input::get('descripcion');
+    //llave foranea
+    $tecnologia->fk_idInstitucion = Input::get('instEq');
+    $tecnologia->fk_idTipoInvencion = Input::get('tipoInv');
+    $tecnologia->fk_idSector = Input::get("sectorEst");
+    $tecnologia->bajaLogica = 1;
+
+
+    $tecnologia->save();
 
    return 'El registro ha sido modificado';
      echo "heelloo ";
-     echo $convocatoria;
+     echo $tecnologia;
 
      /* seccion 1 */
 
