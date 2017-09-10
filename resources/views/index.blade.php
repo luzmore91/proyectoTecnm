@@ -42,7 +42,7 @@
                     <div class="col-xs-6">
 
          
-      <!---- data-toggle="modal" data-target="#ModalLoginForm" --->
+      <!--- data-toggle="modal" data-target="#ModalLoginForm" -->
         <button type="submit" class="btn btn-success btn-lg" style="left: 80%;position: relative;" >
           <span class="glyphicon glyphicon-ok"></span> Aceptar 
         </button>
