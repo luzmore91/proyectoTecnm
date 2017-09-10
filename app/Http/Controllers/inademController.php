@@ -15,13 +15,22 @@ use App\ObjetivoProyecto;
 use App\Colaboracion;
 use App\EquipoEmprendedor;
 use App\Participante;
+use App\Riesgos;
+
 
 class inademController extends Controller
 {
+
+     protected $participante;
+ ///funcion que obtiene el contenido de la tabla
+
+
+
     
     ///desplegar vista desde el controlador 
     public function ver()
     { /// Consulta los catalogos de la BD 
+
         
       ///////////PARTE 0///////////
         //--- catalogo Institucion---//
@@ -64,11 +73,12 @@ class inademController extends Controller
     }
 
 
+
     //validando formularios en laravel
  public function insertar(Request $request)
  {
      //recuperar valores escritos en los campos
-    //Arreglos
+    //Objetos para los inserts
      $tecnologia = new Tecnologia;
      $proyecto = new Proyecto;
      $propInt = new PropiedadIntelectual;
@@ -77,6 +87,7 @@ class inademController extends Controller
      $col = new Colaboracion;
      $participante = new Participante;
      $equipo = new EquipoEmprendedor;
+     $riesgo = new Riesgos;
 
     /* Tabla tecnologia  */
     $tecnologia->titulo = Input::get('titulo');
@@ -116,6 +127,13 @@ class inademController extends Controller
       //OBJETO EN TABLA
       // Crear arreglo donde se inserten estos campos
      //sustituir estos cambios
+
+    //obtener tamaño de la tabla
+
+     $num = $request->input('cont');
+
+     echo "valor : "+$num;
+
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');
       $arCon = $request->input('areaConocimiento');
@@ -128,8 +146,29 @@ class inademController extends Controller
      $col->descripcion = Input::get('desIES');
      $col->fk_idEquipoEmprendedor
      $col->bajaLogica = 1;
-
 */
+
+     //Tabla Riesgos
+  /*   $dataRiesgos = [];
+    foreach ($checkBox as $sa) {
+    $dataRiesgos[] = [
+        'estrategiaMitigacion'  => $sa,
+        'descripcion'    => $sa,
+        'fk_idCatalogoRiesgo'       => $sa,
+        'fk_idProyecto'       => '',
+        'bajaLogica'       => 1
+    ];
+}
+*/
+
+//$riesgos->insert($dataRiesgos);
+/*
+     $riesgos->estrategiaMitigacion=Input::get('estMitigacion');
+     $riesgos->descripcion=Input::get('descRiesgo');
+     $riesgos->fk_idCatalogoRiesgo=Input::get('descRiesgo');
+     $riesgo->fk_idProyecto = '';
+     $riesgo->bajaLogica = 1;
+
      //Tabla proyecto
      $proyecto->fk_idEquipoEmprendedor=Input::get('madurezProy');
     /*
@@ -148,33 +187,6 @@ class inademController extends Controller
 
 */
 
-
-     /* seccion 2 */
-       $madurezProy = $request->input('madurezProy');
-
-       $estadoAct = $request->input('estadoAct');
-       $tipoProt = $request->input('tipoProt');
-       $perProy = $request->input('perProy');
-       $otroPerProy = $request->input('otroPerProy');
-
-     /* seccion 3 */
-      $desIES = $request->input('desIES');
-       //crear objeto para la insercion automatica de N columnas
-       //sustituir estos cambios
-      $tipoRiesgo = $request->input('tipoRiesgo');
-      $descRiesgo = $request->input('descRiesgo');
-      $estMitigacion = $request->input('estMitigacion');
-       //fin de objeto tabla
-      $analisisEnt = $request->input('analisisEnt');
-
-
-     /* seccion 4 */
-      $recursosHumanos = $request->input('recursosHumanos');
-      $recursosTec = $request->input('recursosTec');
-      $recursosFin = $request->input('recursosFin');
-      $usoApp = $request->input('usoApp');
-      $viabilidad = $request->input('viabilidad');
-      $beneficios = $request->input('beneficios');
 
       $tecnologia->save();
       $anEnt->save();

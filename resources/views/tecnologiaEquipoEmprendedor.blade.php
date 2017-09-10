@@ -34,7 +34,7 @@
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
                 	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green" name="instEq">
                   		 @foreach ($institucion as $int)
-                        <option> {{ $int->nombreInstitucion }}</option>
+                        <option value="{{$int->idInstitucion}}"> {{ $int->nombreInstitucion }}</option>
                         @endforeach
                 	</select>
                     </div>
@@ -44,7 +44,7 @@
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
                 	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green" name="tipoInv">
                   		@foreach ($inv as $in)
-                        <option> {{ $in->descripcion }}</option>
+                        <option value="{{$in->idTipoInvencion}}"> {{ $in->descripcion }}</option>
                         @endforeach
                 	</select>
                     </div>
@@ -83,13 +83,13 @@
           
           <div class="col-xs-2"><select id="gradoEstP" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">          
               @foreach ($gradoEstudios as $grado)
-              <option> {{ $grado->nivel }}</option>
+              <option value="{{$grado->idGradoEstudios}}"> {{ $grado->nivel }}</option>
               @endforeach
           </select></div>
           
           <div class="col-xs-2"><select id="areaConocimiento" required class="form-control selectpicker" data-style="btn-green" name="areaConocimiento"> 
                @foreach ($areaConocimiento as $areaC)
-               <option> {{ $areaC->descripcion }}</option>
+               <option value="{{$areaC->idAreaConocimiento}}"> {{ $areaC->descripcion }}</option>
                @endforeach                                    
           </select></div>
           
@@ -101,14 +101,15 @@
           
           <div class="col-xs-2"><select id="instPart" required class="form-control selectpicker" data-style="btn-green" name="instPart">
               @foreach ($institucion as $ti)
-              <option> {{ $ti->nombreInstitucion }}</option> 
+              <option value="{{$ti->idInstitucion}}"> {{ $ti->nombreInstitucion }}</option>
               @endforeach
           </select></div>     
           
         
       </div>
+
       <div class="col-xs-12 text-right">
-        <button type="submit" class="btn btn-blue" onclick="obtenerDatosEquipo()" style="margin-top: 10px; margin-right: 15px;" >
+        <button type="submit" class="btn btn-blue" onclick="obtenerDatosEquipo();" style="margin-top: 10px; margin-right: 15px;" >
             <span class="glyphicon glyphicon-plus"></span>
         </button>
       </div>
@@ -127,8 +128,10 @@
                     <th>Eliminar</th>
                 </tr>
             </thead>
-            <tbody id="cuerpoTabla">     
+            <tbody id="cuerpoTabla" name="contenidoTabla">
+
             </tbody>
-          </table>     
+          </table>
+
       </div>
 </div>

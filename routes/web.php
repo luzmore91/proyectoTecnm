@@ -25,6 +25,7 @@ Route::get('home', function () {
 //LLAMAR CONTROLADOR A LA VISTA
 Route::get('/','inademController@ver');
 
+
 Route::get('admin', function () {
     return view('admin');
 });
