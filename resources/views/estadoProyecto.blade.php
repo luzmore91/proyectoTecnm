@@ -14,7 +14,7 @@
 
  	<select class="form-control selectpicker" data-style="btn-green" name="madurezProy">
                   		 @foreach ($TRL as $trl)
-                                        <option> {{ $trl->descripcion }}</option>
+                                        <option value="{{$trl->idTRL}}"> {{ $trl->descripcion }}</option>
                                           @endforeach
                 	</select>
 </div>
@@ -55,7 +55,7 @@
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green" name="estadoAct">
         @foreach ($propInt as $itera)
-        <option> {{ $itera->descripcion }}</option>
+        <option value="{{$itera->idTipoPropiedadIntelectual}}"> {{ $itera->descripcion }}</option>
         @endforeach
     </select>
 </div>
@@ -64,7 +64,7 @@
 <div class="col-xs-4">
     <select class="form-control selectpicker" data-style="btn-green" name="tipoProt">
         @foreach ($prot as $itera)
-        <option> {{ $itera->descripcion }}</option>
+        <option value="{{$itera->idTipoProteccion}}"> {{ $itera->descripcion }}</option>
         @endforeach
     </select>
 </div>
