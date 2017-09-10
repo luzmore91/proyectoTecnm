@@ -68,7 +68,7 @@ class inademController extends Controller
  public function insertar(Request $request)
  {
      //recuperar valores escritos en los campos
-    //Arreglos
+    //Objetos para los inserts
      $tecnologia = new Tecnologia;
      $proyecto = new Proyecto;
      $propInt = new PropiedadIntelectual;
@@ -77,6 +77,7 @@ class inademController extends Controller
      $col = new Colaboracion;
      $participante = new Participante;
      $equipo = new EquipoEmprendedor;
+     $riesgo = new Riesgos;
 
     /* Tabla tecnologia  */
     $tecnologia->titulo = Input::get('titulo');
@@ -128,8 +129,16 @@ class inademController extends Controller
      $col->descripcion = Input::get('desIES');
      $col->fk_idEquipoEmprendedor
      $col->bajaLogica = 1;
-
 */
+
+     //Tabla Riesgos
+
+     $riesgos->estrategiaMitigacion=Input::get('estMitigacion');
+     $riesgos->descripcion=Input::get('descRiesgo');
+     $riesgos->fk_idCatalogoRiesgo=Input::get('descRiesgo');
+     $riesgo->fk_idProyecto = '';
+     $riesgo->bajaLogica = 1;
+
      //Tabla proyecto
      $proyecto->fk_idEquipoEmprendedor=Input::get('madurezProy');
     /*
@@ -148,33 +157,6 @@ class inademController extends Controller
 
 */
 
-
-     /* seccion 2 */
-       $madurezProy = $request->input('madurezProy');
-
-       $estadoAct = $request->input('estadoAct');
-       $tipoProt = $request->input('tipoProt');
-       $perProy = $request->input('perProy');
-       $otroPerProy = $request->input('otroPerProy');
-
-     /* seccion 3 */
-      $desIES = $request->input('desIES');
-       //crear objeto para la insercion automatica de N columnas
-       //sustituir estos cambios
-      $tipoRiesgo = $request->input('tipoRiesgo');
-      $descRiesgo = $request->input('descRiesgo');
-      $estMitigacion = $request->input('estMitigacion');
-       //fin de objeto tabla
-      $analisisEnt = $request->input('analisisEnt');
-
-
-     /* seccion 4 */
-      $recursosHumanos = $request->input('recursosHumanos');
-      $recursosTec = $request->input('recursosTec');
-      $recursosFin = $request->input('recursosFin');
-      $usoApp = $request->input('usoApp');
-      $viabilidad = $request->input('viabilidad');
-      $beneficios = $request->input('beneficios');
 
       $tecnologia->save();
       $anEnt->save();
