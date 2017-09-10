@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Convocatoria extends Model
+class Participante extends Model
 {
-    //
-    protected $table = 'tecnologiaProyecto';
+     ////tabla a utilizar
+    protected $table = 'participante';
     public $timestamps = false;
 }

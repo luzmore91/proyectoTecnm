@@ -34,7 +34,7 @@
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
                 	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green" name="instEq">
                   		 @foreach ($institucion as $int)
-                                        <option> {{ $int->nombreInstitucion }}</option>
+                                        <option value="{{$int->idInstitucion}}"> {{ $int->nombreInstitucion }}</option>
                                           @endforeach
 
                 	</select>
@@ -45,7 +45,7 @@
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
                 	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green" name="tipoInv">
                   		 @foreach ($inv as $in)
-                                        <option> {{ $in->descripcion }}</option>
+                                        <option value="{{$in->idTipoInvencion}}"> {{ $in->descripcion }}</option>
                                           @endforeach
                 	</select>
                     </div>
