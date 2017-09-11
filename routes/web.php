@@ -39,7 +39,7 @@ Route::get('editar', function(){
 
 //// enrutamiento de la accion
 Route::post('/insertar', 'inademController@insertar');
-
+Route::post('/reciboArray','inademController@reciboArray');
 
 #DataTables - Admin
 Route::get('datatable', ['uses'=>'PostController@datatable']);

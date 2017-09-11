@@ -85,14 +85,14 @@
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green" name="perProy">
                   		 @foreach ($objProy as $op)
-                                        <option> {{ $op->descripcion }}</option>
+                                        <option value="{{$op->idtipoObjetivoProyecto}}"> {{ $op->descripcion }}</option>
                                           @endforeach
                 	</select>
 </div>
 
         <div class="col-xs-3"><label>En caso de seleccionar la opción "Otro", describir en el recuadro anexo.</label> </div>
 <div class="col-xs-4">
- 	 <input class="form-control" type="text" name="otro_ObjetivoProyecto" name="otroPerProy"  placeholder="¿Qué persigue el proyecto o tecnologia?"/>
+ 	 <input class="form-control" type="text" name="otro_ObjetivoProyecto"   placeholder="¿Qué persigue el proyecto o tecnologia?"/>
 </div>
 
 </div>

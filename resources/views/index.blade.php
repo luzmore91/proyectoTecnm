@@ -44,7 +44,7 @@
 
          
       <!--- data-toggle="modal" data-target="#ModalLoginForm" -->
-        <button id="aceptar" type="submit" class="btn btn-success btn-lg" style="left: 80%;position: relative;" >
+        <button  type="submit" class="btn btn-success btn-lg" style="left: 80%;position: relative;" >
           <span class="glyphicon glyphicon-ok"></span> Aceptar 
         </button>
 

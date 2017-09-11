@@ -147,7 +147,7 @@ function obtenerDatosRiesgos()
   tbody.appendChild(tr);
 
   limpiarComponentesRiesgo();
-
+  enviarParticipante();
 }
 
 
@@ -175,28 +175,31 @@ function limpiarComponentesParticipate() {
     document.getElementById("nomPart").value="";
     document.getElementById("correoPart").value="";
     document.getElementById("telPart").value="";
-    document.getElementById("gradoEstP").select_[0].selected = true;
+
 }
 
 function limpiarComponentesRiesgo() {
     document.getElementById("descRiesgo").value="";
     document.getElementById("estMitigacion").value="";
-    document.getElementById("tipoRiesgo").select_[0].selected = true;
+
 }
 
 
 
-$("#aceptar").click(function() {
+
+function enviarParticipante() {
     event.preventDefault();
+    console.log("entrar a la funcion enviar ");
    // var token = $("#token").val();
     $.ajax({
-        url:'./insertar',
+        url:'./reciboArray',
         type: 'POST',
         contentType: 'application/json',
-        data:{Participante:ParArreglo,Riesgos:RiesArreglo},
+        data:{Participante:ParArreglo},
         success: function() {
             console.log("Sent");
         },
         dataType:'json'
     });
-});
+
+}

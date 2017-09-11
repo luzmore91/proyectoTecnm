@@ -22,12 +22,22 @@ use Log;
 class inademController extends Controller
 {
 
-     protected $participante;
- ///funcion que obtiene el contenido de la tabla
+   public function reciboArray(Request $request){
+
+        //obtener tamaño de la tabla
+      if($request->ajax()){
+          return response()->json(["mensaje"=>$request->all()]);
+      }
+      $participanteArray = $request->input('Participante');
+     // $riesgoArray = $request->input('Riesgos');
+
+       dd($request->input($participanteArray));
+         return Response::json($participanteArray);
+      //print_r("valores recibidos ".response()->json($participanteArray));
 
 
 
-    
+   }
     ///desplegar vista desde el controlador 
     public function ver()
     { /// Consulta los catalogos de la BD 
@@ -123,20 +133,7 @@ class inademController extends Controller
 
 
      //Tabla Participantes
-      //OBJETO EN TABLA
-      // Crear arreglo donde se inserten estos campos
-     //sustituir estos cambios
 
-    //obtener tamaño de la tabla
-      if($request->ajax()){
-          return response()->json(["mensaje"=>$request->all()]);
-      }
-      $participanteArray = $request->input('Participante');
-      $riesgoArray = $request->input('Riesgos');
-
-     //dd($request->input($dataA));
-         //return Response::json($dataA);
-       print_r("valores recibidos ".response()->json($participanteArray));
 
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');
@@ -152,18 +149,7 @@ class inademController extends Controller
      $col->bajaLogica = 1;
 */
 
-     //Tabla Riesgos
-  /*   $dataRiesgos = [];
-    foreach ($checkBox as $sa) {
-    $dataRiesgos[] = [
-        'estrategiaMitigacion'  => $sa,
-        'descripcion'    => $sa,
-        'fk_idCatalogoRiesgo'       => $sa,
-        'fk_idProyecto'       => '',
-        'bajaLogica'       => 1
-    ];
-}
-*/
+
 
 //$riesgos->insert($dataRiesgos);
 /*
@@ -192,11 +178,13 @@ class inademController extends Controller
 */
 
 
+
+
       $tecnologia->save();
       $anEnt->save();
       //$proyecto->save();
       $propInt->save();
-
+      $objP->save();
        //DB::insert('INSERT INTO version_authors (credit_id) VALUES (?)', array($credit_id));
 }
 }
