@@ -61,15 +61,16 @@ function eliminarParticipante(idRegistro)
 
  $("#aceptar").click(function() {
           event.preventDefault();
-     var token = $("#token").val();
+    // var token = $("#token").val();
      $.ajax({
                     url:'./insertar',
                     type: 'POST',
-         contentType: 'application/json',
-                             data:{Arre:ParArreglo},
-                      success: function() {
-            console.log("Sent");
-        },
+                   contentType: 'application/json',
+
+                   data:{Arre:ParArreglo},
+                   success: function() {
+                   console.log("Sent");
+                     },
                              dataType:'json'
                 });
 

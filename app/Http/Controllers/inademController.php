@@ -128,13 +128,13 @@ class inademController extends Controller
      //sustituir estos cambios
 
     //obtener tamaño de la tabla
-      if($resquest->ajax()){
+      if($request->ajax()){
           return response()->json(["mensaje"=>$request->all()]);
       }
       $dataA = $request->input('Arre');
-       //dd($request->input($dataA));
-        //return Response::json($dataA);
-       print_r("valores recibidos ".response()->json($dataA));
+       dd($request->input($dataA));
+         //return Response::json($dataA);
+     //  print_r("valores recibidos ".response()->json($dataA));
 
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');
