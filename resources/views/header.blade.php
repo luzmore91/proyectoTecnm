@@ -28,7 +28,7 @@
         <!-- middleHeader starts -->
         <div id="middleHeader" class="row">
             <div id="middleHeader1" class="col-xs-4">
-                <div id="sep"><a href="http://sep.gob.mx/" target="_blank"><img src="images/logos/logo-sep-web.png" width="270" height="80" alt="Secretaría de Educación Pública"></a> </div>
+                <div id="sep"><a href="http://sep.gob.mx/" target="_blank"><img src="/proyectoTecnm/public/images/logos/logo-sep-web.png" width="270" height="80" alt="Secretaría de Educación Pública"></a> </div>
             </div>
             <div id="middleHeader2" class="col-xs-4">
                 <div id="site" style="    font-size: 28px;

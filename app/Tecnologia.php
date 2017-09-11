@@ -8,10 +8,12 @@ class Tecnologia extends Model
 {
     //tabla a utilizar
     protected $table = 'tecnologiaProyecto';
+    
+    protected $primaryKey = 'idTecnologiaProyecto';
+    
     public $timestamps = false;
-
-
-      public function institucion()
+    
+    public function institucion()
     {
         return $this->hasOne('idInstitucion'); // links this->id to events.course_id
     }
