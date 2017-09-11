@@ -21,8 +21,8 @@
             <table id="users" class="table table-hover table-condensed" style="width:100%">
                 <thead>
                     <tr>
-                        <th>Nombre del proyecto</th>
-                        <th>Descripcion</th>
+                        <th>Nombre</th>
+                        <th>Institución</th>
                         <th>Tipo</th>
                         <th>Actualizar</th>
                         <th>Eliminar</th>
@@ -32,8 +32,8 @@
                     @foreach ($proyectos as $proyecto)
                     <tr>
                         <td>{{ $proyecto->titulo }}</td>
-                        <td>Elemento2</td>
-                        <td>Elemento3</td>
+                        <td>{{ $proyecto->fk_idInstitucion }}</td>
+                        <td>{{ $proyecto->fk_idTipoInvencion }}</td>
                         <td align="center">
 
                         {{ Form::open(array('action' => array('AdminController@editar', $proyecto->idTecnologiaProyecto), 'method' => 'get')) }}
