@@ -9,7 +9,10 @@
         <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
 
         <!-- datatable español -->
-        <script src="//cdn.datatables.net/plug-ins/1.10.16/i18n/German.json"></script>
+        <script src="//cdn.datatables.net/plug-ins/1.10.16/i18n/Spanish.json"></script>
+
+        <!-- Confirmacion de eliminacion de registros -->
+        <script type="text/javascript" src="{{ URL::asset('js/confEliminar.js') }}"></script>
 
     </head>
     <body>
@@ -31,12 +34,20 @@
                         <td>{{ $proyecto->titulo }}</td>
                         <td>Elemento2</td>
                         <td>Elemento3</td>
-                        <td align="center">{{ Form::open(array('action' => array('AdminController@editar', $proyecto->idTecnologiaProyecto), 'method' => 'get')) }}
+                        <td align="center">
+
+                        {{ Form::open(array('action' => array('AdminController@editar', $proyecto->idTecnologiaProyecto), 'method' => 'get')) }}
                             {{ Form::submit('Editar', ['class' => 'btn btn-primary']) }}
-                            {{ Form::close() }}</td>
-                        <td>{{ Form::open(array('action' => array('AdminController@eliminar', $proyecto->idTecnologiaProyecto))) }}
+                            {{ Form::close() }}
+                            </td>
+                        <td>
+                        <a href="#" onclick="eliminarProyecto()">
+                        {{ Form::open(array('action' => array('AdminController@eliminar', $proyecto->idTecnologiaProyecto))) }}
                             {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
-                            {{ Form::close() }}</td>
+                            {{ Form::close() }}
+                        </a>
+
+                            </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -51,14 +62,7 @@
                         "url": "//cdn.datatables.net/plug-ins/9dcbecd42ad/i18n/Spanish.json"      
                     },
                     //Obtener datos para llenar la tabla   
-                    "processing": true,
-                    "serverSide": true,
-                    "ajax": "{{ route('datatable.getposts') }}",
-                    "columns": [
-                        {data: 'id', name: 'id'},
-                        {data: 'title', name: 'title'},
-                        {data: 'category', name: 'category'},
-                        {data: 'tag', name: 'tag'}]
+                        
                 });
             });
 
