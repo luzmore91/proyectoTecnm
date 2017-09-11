@@ -25,32 +25,49 @@
 <div class="col-xs-12">
 <label style="font-style:italic">Describa los riesgos asociados con su proyecto/tecnología, y sus estrategias de mitigación.</label></div>
 
+
+     <!-- Tabla para agregar usuarios-->
+    <div class="col-xs-12">
+
+          <div class="col-xs-3"><label for="Nombre" >Tipo de riesgo</label></div>
+          <div class="col-xs-4"><label for="gradoEstudios" >Descripción</label></div>
+          <div class="col-xs-4"><label for="areaConocimiento" >Estrategia de mitigación</label></div>
+
+      </div>
+
+    <div class="col-xs-12">
+
+        <div class="col-xs-3"><select id="tipoRiesgo" class="form-control selectpicker" name="tipoRiesgo" data-style="btn-green">
+            @foreach ($riesgos as $ri)
+            <option value=""> {{ $ri->descripcion }}</option>
+            @endforeach
+        </select></div>
+
+        <div class="col-xs-4"><textarea class="form-control" id="descRiesgo" placeholder="Descripción" name="descRiesgo" style="resize: none" title="Se requiere una descripción" required></textarea></div>
+
+        <div class="col-xs-4"><textarea class="form-control" id="estMitigacion" placeholder="Estrategia" name="estMitigacion" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></div>
+
+    </div>
+
+    <div class="col-xs-12 text-right">
+        <button type="button" class="btn btn-blue" onclick="obtenerDatosRiesgos();" style="margin-top: 10px; margin-right: 15px;" >
+            <span class="glyphicon glyphicon-plus"></span>
+        </button>
+    </div>
+
 <div class="col-xs-12">
-<table id="altaEquipo" class="table table-striped table-hover sortable">
-                        <thead>
-                            <tr>
-                                <th><center>Tipo de riesgo</center></th>
-                                <th><center>Descripción</center></th>
-                                <th><center>Estrategia de mitigación</center></th>                             
-                            </tr>
-                        </thead>
-             
-                        <tbody>
-                             <tr>
-                                <td class="text-center"> <select id="estudios1" class="form-control selectpicker" name="tipoRiesgo0" data-style="btn-green">
-                  		          @foreach ($riesgos as $ri)
-                                        <option value=""> {{ $ri->descripcion }}</option>
-                                          @endforeach
-                	            </select></td>
-                <td><textarea class="form-control" id="Decripcion1" placeholder="Descripción" name="descRiesgo0" style="resize: none" title="Se requiere una descripción" required></textarea></td>
-                <td><textarea class="form-control" id="Estrategia1" placeholder="Estrategia" name="estMitigacion0" style="resize: none" title="Se requiere una estrategia" required="required"></textarea></td>
-                   
-        
-                       
-
-
-            </tbody>
-</table></div>
+<table id="altaRiesgo" class="table table-striped table-hover sortable">
+    <thead>
+        <tr>
+            <th><center>Tipo de riesgo</center></th>
+            <th><center>Descripción</center></th>
+            <th><center>Estrategia de mitigación</center></th>
+        </tr>
+    </thead>
+    <tbody id="contenidoTablaRiesgos" name="contenidoTablaRiesgos">
+    </tbody>
+</table>
+</div>
 
 <div class="col-xs-13 espacioTitulosContenido">
 <div class="col-xs-3"><h2>8. Análisis del entorno.</h2></div>

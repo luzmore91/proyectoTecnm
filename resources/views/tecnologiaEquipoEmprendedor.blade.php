@@ -53,27 +53,22 @@
     <div class="col-xs-12" style="padding-top: 20px;"></div>
 
    <div class="espacioTitulosContenido">
-    <div class="col-xs-4"><h2>1. Equipo emprendedor / inventor</h2></div>
+       <div class="col-xs-4"><h2>1. Equipo emprendedor / inventor</h2></div>
        <div class="col-xs-1"><button type="button" class="btn btn-green popAyuda" title="Ayuda"
               data-container="body" data-toggle="popover" data-placement="right"
               data-content="Captura la información solicitada del equipo que esta participando en el proyecto o tecnologia">
               <span class="glyphicon glyphicon-question-sign"></span>
-           </button></div>
+       </button></div>
     </div>
       
       <!-- Tabla para agregar usuarios-->
       <div class="col-xs-12">
                 
           <div class="col-xs-2"><label for="Nombre" >Nombre</label></div>
-          
           <div class="col-xs-2"><label for="gradoEstudios" >Último grado de estudios</label></div>
-          
           <div class="col-xs-2"><label for="areaConocimiento" >Área de conocimiento</label></div>
-          
           <div class="col-xs-2"><label for="correo" >Correo electronico</label></div>
-          
           <div class="col-xs-2"><label for="noCelular" >Número celular personal</label></div>
-          
           <div class="col-xs-2"><label for="intitucion" >Institución</label></div>
                          
       </div>
@@ -83,7 +78,7 @@
           
           <div class="col-xs-2"><select id="gradoEstP" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">          
               @foreach ($gradoEstudios as $grado)
-              <option value="{{$grado->idGradoEstudios}}"> {{ $grado->nivel }}</option>
+              <option value="{{$grado->idGradoEstudios}}" name="{{ $grado->nivel }}"> {{ $grado->nivel }}</option>
               @endforeach
           </select></div>
           
@@ -103,20 +98,18 @@
               @foreach ($institucion as $ti)
               <option value="{{$ti->idInstitucion}}"> {{ $ti->nombreInstitucion }}</option>
               @endforeach
-          </select></div>     
-          
-        
+          </select></div>
       </div>
 
       <div class="col-xs-12 text-right">
-        <button type="submit" class="btn btn-blue" onclick="obtenerDatosEquipo();" style="margin-top: 10px; margin-right: 15px;" >
+        <button type="button" class="btn btn-blue" onclick="obtenerDatosEquipo();" style="margin-top: 10px; margin-right: 15px;" >
             <span class="glyphicon glyphicon-plus"></span>
         </button>
       </div>
 
       
       <div class="col-xs-12" style="padding-top: 20px;">
-        <table id="altaEquipo" class="table table--bordered table-hover sortable">
+        <table id="altaEquipo" class="table table-striped table-hover sortable">
             <thead>
                 <tr>
                     <th>Nombre</th>
@@ -128,8 +121,8 @@
                     <th>Eliminar</th>
                 </tr>
             </thead>
-            <tbody id="cuerpoTabla" name="contenidoTabla">
-
+            <tbody id="contenidoTablaMiembros" name="contenidoTablaMiembros">
+            <input type='hidden' name='_token' value='{{csrf_token()}}' id='tokenc'>
             </tbody>
           </table>
 
