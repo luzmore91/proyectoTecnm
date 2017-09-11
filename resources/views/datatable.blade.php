@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
-    <head>     
+    
         <title>Laravel 5 - Implementing datatables tutorial using yajra package</title>
-=======
+
     <head>
          <title>Tecnologico de mexico</title>
     <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
@@ -15,7 +14,7 @@
          <link href="{{ asset('/css/format.css') }}" rel="stylesheet" type="text/css">
          <link href="{{ asset('/css/ie.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" type="text/css">
->>>>>>> 37388d54cc182f2442417edb85f32e8da4073087
+
         <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
         <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
         <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
