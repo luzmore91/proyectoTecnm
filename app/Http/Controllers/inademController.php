@@ -131,10 +131,12 @@ class inademController extends Controller
       if($request->ajax()){
           return response()->json(["mensaje"=>$request->all()]);
       }
-      $dataA = $request->input('Arre');
-       dd($request->input($dataA));
+      $participanteArray = $request->input('Participante');
+      $riesgoArray = $request->input('Riesgos');
+
+     //dd($request->input($dataA));
          //return Response::json($dataA);
-     //  print_r("valores recibidos ".response()->json($dataA));
+       print_r("valores recibidos ".response()->json($participanteArray));
 
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');
