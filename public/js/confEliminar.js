@@ -4,7 +4,7 @@
 {
     var txt;
     if (confirm("Eliminar proyecto?") == true) {
-        txt = "You pressed OK!";
+        txt = "Precione OK!";
         alert(txt);
     } else {
         //Si el proyecto no se elimina se procede a realizar nada.
