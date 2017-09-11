@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Laravel 5 - Implementing datatables tutorial using yajra package</title>
+         <title>Tecnologico de mexico</title>
+    <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/css/bootstrap-select.css') }}" rel="stylesheet" type="text/css">
+    <!-- Custom CSS -->
+    <link href="{{ asset('/css/form.css') }}" rel="stylesheet" type="text/css">
+         <link href="{{ asset('/css/format.css') }}" rel="stylesheet" type="text/css">
+         <link href="{{ asset('/css/ie.css') }}" rel="stylesheet" type="text/css">
+        <link href="{{ asset('/css/styles.css') }}" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="http://demo.itsolutionstuff.com/plugin/bootstrap-3.min.css">
         <link href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" rel="stylesheet">
         <script src="http://demo.itsolutionstuff.com/plugin/jquery.js"></script>
@@ -15,6 +24,9 @@
         <script type="text/javascript" src="{{ URL::asset('js/confEliminar.js') }}"></script>
 
     </head>
+        <div class="container">
+            @include('header')
+        </div>
     <body>
 
         <div class="container">
@@ -71,4 +83,7 @@
 
         </script>
     </body>
+            <div class="container">
+            @include('footer')
+        </div>
 </html>
