@@ -31,6 +31,12 @@ Route::get('admin','AdminController@index');
 Route::get('admin/{id}','AdminController@editar');
 Route::post('admin/{id}','AdminController@eliminar');
 
+//Enrutamiento de la modificacion de proyectos (lo que sigue de admin)
+Route::get('editar', function(){
+    return view('editar');
+});
+
+
 //// enrutamiento de la accion
 Route::post('/insertar', 'inademController@insertar');
 
@@ -38,3 +44,4 @@ Route::post('/insertar', 'inademController@insertar');
 #DataTables - Admin
 Route::get('datatable', ['uses'=>'PostController@datatable']);
 Route::get('datatable/getposts', ['as'=>'datatable.getposts','uses'=>'PostController@getPosts']);
+
