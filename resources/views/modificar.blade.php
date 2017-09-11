@@ -19,8 +19,16 @@
                         <td contenteditable='true'>Elemento2</td>
                         <td contenteditable='true'>Elemento3</td>
                         <td contenteditable='true'>Elemento4</td>
-                        <td contenteditable='true'>Elemento5</td>
-                        <td contenteditable='true'>Elemento6</td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -40,11 +48,23 @@
                 <tbody>
                     <tr>
                         <td contenteditable='true'>Elemento1</td>
-                        <td contenteditable='true'>Elemento2</td>
-                        <td contenteditable='true'>Elemento3</td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
                         <td contenteditable='true'>Elemento4</td>
                         <td contenteditable='true'>Elemento5</td>
-                        <td contenteditable='true'>Elemento6</td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>
@@ -62,11 +82,31 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td contenteditable='true'>Elemento1</td>
-                        <td contenteditable='true'>Elemento2</td>
-                        <td contenteditable='true'>Elemento3</td>
-                        <td contenteditable='true'>Elemento4</td>
-                        <td contenteditable='true'>Elemento5</td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select>
+                              <option value="volvo">Cargar catálogo</option>
+                            </select>
+                        </td>
                     </tr>
                 </tbody>
             </table>

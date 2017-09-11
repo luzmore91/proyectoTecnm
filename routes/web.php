@@ -45,3 +45,6 @@ Route::post('/insertar', 'inademController@insertar');
 Route::get('datatable', ['uses'=>'PostController@datatable']);
 Route::get('datatable/getposts', ['as'=>'datatable.getposts','uses'=>'PostController@getPosts']);
 
+
+
+
