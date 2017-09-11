@@ -26,9 +26,10 @@ Route::get('home', function () {
 Route::get('/','inademController@ver');
 
 
-Route::get('admin', function () {
-    return view('admin');
-});
+//Route::get('admin', function () {return view('admin');});
+Route::get('admin','AdminController@index');
+Route::get('admin/{id}','AdminController@editar');
+Route::post('admin/{id}','AdminController@eliminar');
 
 //// enrutamiento de la accion
 Route::post('/insertar', 'inademController@insertar');
