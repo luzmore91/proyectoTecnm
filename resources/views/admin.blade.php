@@ -16,15 +16,11 @@
             @include('header')
         </div>
 
-
         <!-- tabla de admin -->
         <div class="container">
             @include('datatable')
         </div>
-
-
-
-        
+                
         <div class="container">
             @include('footer')
         </div>
