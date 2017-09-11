@@ -18,6 +18,7 @@
     <body>
 
         <div class="container">
+
             <table id="users" class="table table-hover table-condensed" style="width:100%">
                 <thead>
                     <tr>
@@ -35,12 +36,12 @@
                         <td>{{ $proyecto->fk_idInstitucion }}</td>
                         <td>{{ $proyecto->fk_idTipoInvencion }}</td>
                         <td align="center">
-
+                        
                         {{ Form::open(array('action' => array('AdminController@editar', $proyecto->idTecnologiaProyecto), 'method' => 'get')) }}
                             {{ Form::submit('Editar', ['class' => 'btn btn-primary']) }}
                             {{ Form::close() }}
                             </td>
-                        <td>
+                        <td align="center">
                         <a href="#" onclick="eliminarProyecto()">
                         {{ Form::open(array('action' => array('AdminController@eliminar', $proyecto->idTecnologiaProyecto))) }}
                             {{ Form::submit('Delete', ['class' => 'btn btn-danger']) }}
@@ -53,6 +54,8 @@
                 </tbody>
             </table>
         </div>
+
+        
 
         <script type="text/javascript">
 
