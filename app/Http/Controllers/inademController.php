@@ -16,6 +16,7 @@ use App\Colaboracion;
 use App\EquipoEmprendedor;
 use App\Participante;
 use App\Riesgos;
+use Log;
 
 
 class inademController extends Controller
@@ -72,8 +73,6 @@ class inademController extends Controller
         return view('index',['institucion' => $institucion,'inv' => $inv,"gradoEstudios" => $gradoEstudios,"areaConocimiento" => $areaConocimiento,"TRL" => $TRL,"sector" => $sector,"propInt" =>  $propInt,"objProy" => $objProy,"prot" =>  $prot,"riesgos" => $riesgos]);
     }
 
-
-
     //validando formularios en laravel
  public function insertar(Request $request)
  {
@@ -129,10 +128,13 @@ class inademController extends Controller
      //sustituir estos cambios
 
     //obtener tamaño de la tabla
-
-     $num = $request->input('cont');
-
-     echo "valor : "+$num;
+      if($resquest->ajax()){
+          return response()->json(["mensaje"=>$request->all()]);
+      }
+      $dataA = $request->input('Arre');
+       //dd($request->input($dataA));
+        //return Response::json($dataA);
+       print_r("valores recibidos ".response()->json($dataA));
 
       $nomPart = $request->input('nomPart');
       $gradoEstP = $request->input('gradoEstP');

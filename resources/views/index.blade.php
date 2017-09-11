@@ -1,6 +1,7 @@
 <html>
     <head>
-        <title>Tecnologico de mexico</title>
+        <title>convocatoria INADEM</title>
+        <meta name="csrf-token" content="{{ csrf_token() }}">
         <link href="{{ asset('/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/app.css') }}" rel="stylesheet" type="text/css">
         <link href="{{ asset('/css/bootstrap-datetimepicker.min.css') }}" rel="stylesheet" type="text/css">
@@ -43,7 +44,7 @@
 
          
       <!--- data-toggle="modal" data-target="#ModalLoginForm" -->
-        <button type="submit" class="btn btn-success btn-lg" style="left: 80%;position: relative;" >
+        <button id="aceptar" type="submit" class="btn btn-success btn-lg" style="left: 80%;position: relative;" >
           <span class="glyphicon glyphicon-ok"></span> Aceptar 
         </button>
 
@@ -89,14 +90,23 @@
     </body>
 
     <!-- Select -->
+
     <script type="text/javascript" src="{{asset('/js/jquery.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('/js/bootstrap.js')}}"></script>
     <script type="text/javascript" src="{{ asset('/js/bootstrap-select.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/codigoSelect.js') }}"></script>
     <script type="text/javascript" src="{{ asset('/js/popOver.js') }}"></script>
+       <script type="text/javascript">
+     $(document).ready(function(){
+           $.ajaxSetup({
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
+     });
+               </script>
     <script type="text/javascript" src="{{ asset('/js/tableMembers.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('js/sorttable.js'></script>
+    <script type="text/javascript" src="{{ asset('js/sorttable.js') }}"></script>
 
-    <script>
-    </script>
+
 </html>

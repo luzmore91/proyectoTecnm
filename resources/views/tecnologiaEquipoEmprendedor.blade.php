@@ -129,7 +129,7 @@
                 </tr>
             </thead>
             <tbody id="cuerpoTabla" name="contenidoTabla">
-
+             <input type='hidden' name='_token' value='{{csrf_token()}}' id='tokenc'>
             </tbody>
           </table>
 

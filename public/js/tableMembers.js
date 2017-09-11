@@ -1,7 +1,9 @@
 var count_tr=0;
+var ParArreglo = [];
+
 function obtenerDatosEquipo()
 { 
-    
+
     var nombreMiembro = document.getElementById("nomPart").value;
     var gradoEstudio = document.getElementById("gradoEstP").value;
     var areaConocimiento = document.getElementById("areaConocimiento").value;
@@ -14,10 +16,11 @@ function obtenerDatosEquipo()
     var tr = document.createElement('tr');
     count_tr++;
     
+    ParArreglo.push({nombre:nombreMiembro,grado:gradoEstudio,area:areaConocimiento,correo:correo,tel:telefonoMovil,institucion:institucion});
 
     tr.id= "miembro_" + count_tr;
     
-    var info = "<td classs='' id='nombreParticipante_"+ count_tr +"' name='nombreParticipante_"+ count_tr +"'><input name="'cont'" style="'display: none;'" value='"count_tr"'/>"+ nombreMiembro+"</td>";
+    var info = "<input type='hidden' name='_token' value='{{csrf_token() }}' id='token'><td classs='' id='nombreParticipante_"+ count_tr +"' name='nombreParticipante_"+ count_tr +"'>"+ nombreMiembro+"</td>";
     
 	info += "<td classs='' id='gradoEstudioParticipante_"+ count_tr +"' name='gradoEstudioParticipante_"+ count_tr +"'>"+ gradoEstudio+"</td>";
   
@@ -37,6 +40,7 @@ function obtenerDatosEquipo()
 tr.innerHTML = info;
 tbody.appendChild(tr);
     
+    console.log("objetvo BD",ParArreglo);
 }
 
 
@@ -48,8 +52,26 @@ function eliminarParticipante(idRegistro)
     
     console.log(registroeliminar);
     console.log(idRegistro);
-
-    
-    
     
 }
+
+
+
+
+
+ $("#aceptar").click(function() {
+          event.preventDefault();
+     var token = $("#token").val();
+     $.ajax({
+                    url:'./insertar',
+                    type: 'POST',
+         contentType: 'application/json',
+                             data:{Arre:ParArreglo},
+                      success: function() {
+            console.log("Sent");
+        },
+                             dataType:'json'
+                });
+
+
+            });
