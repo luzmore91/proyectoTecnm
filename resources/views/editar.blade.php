@@ -20,6 +20,9 @@
         </div>
 
 <body>
+
+    <!-- Aquí se manda a llamar el el .blade.php en donde se tienen que cargar el query de los proyectos para
+    poder actualizarlos en caso de ser necesario. -->
         <div class="container">
             @include('modificar')
         </div>
