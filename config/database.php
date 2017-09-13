@@ -39,7 +39,7 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+     /*   'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', 'servicios.cenidet.edu.mx'), //server: servicios.cenidet.edu.mx   local : 127.0.0.1
             'port' => env('DB_PORT', '3306'),
@@ -53,8 +53,8 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-
-       /* 'mysql' => [
+*/
+        'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'), //server: servicios.cenidet.edu.mx   local : 127.0.0.1
             'port' => env('DB_PORT', '3306'),
@@ -68,7 +68,7 @@ return [
             'strict' => true,
             'engine' => null,
         ],
-        */
+
         'pgsql' => [
             'driver' => 'pgsql',
             'host' => env('DB_HOST', '127.0.0.1'),

@@ -22,22 +22,52 @@ use Log;
 class inademController extends Controller
 {
 
-   public function reciboArray(Request $request){
 
-        //obtener tamaño de la tabla
-      if($request->ajax()){
-          return response()->json(["mensaje"=>$request->all()]);
+
+    public function reciboArray(Request $request){
+
+
+     //modelo de la tabla Participante
+  if($request->ajax()){
+
+    $dato =$request->all(); // This will get all the request data.
+
+
+            $participante = new Participante;
+            $tecno = new Tecnologia;
+
+         //consulta a la tabla tecnologiaProyecto, el ultimo ID integrado
+       $idTec = $tecno->id;
+
+               $participante->fk_idInstitucion = $request->input('participante.fk_institucion');
+               $participante->fk_idGradoEstudios = $request->input('participante.fk_idGradoEstudios');
+               $participante->fk_idAreaConocimientos = $request->input('participante.fk_idAreaConocimientos');
+               $participante->fk_idDireccion = $request->input('participante.fk_idDireccion');
+               $participante->correoElectronico =$request->input('participante.correoElectronico');
+               $participante->nombre = $request->input('participante.nombre');
+               $participante->apellidoPaterno = $request->input('participante.apellidoPaterno');
+               $participante->apellidoMaterno = $request->input('participante.apellidoMaterno');
+               $participante->numeroMovil = $request->input('participante.numeroMovil');
+               $participante->fechaNacimiento = $request->input('participante.fechaNacimiento');
+               $participante->curp = $request->input('participante.curp');
+               $participante->genero = $request->input('participante.genero');
+               $participante->telefonoFijo = $request->input('participante.telefonoFijo');
+               $participante->numeroControl =$request->input('participante.numeroControl');
+               $participante->correoInstitucional = $request->input('participante.correoInstitucional');
+               $participante->bajaLogica = $request->input('participante.bajaLogica');
+               $participante->fk_idTecnologiaProyecto = $idTec;
+          $participante->save();
+
+         return response()->json(['valor'=>$dato]);
+
+
+        }
+
+
+
+
+
       }
-      $participanteArray = $request->input('Participante');
-     // $riesgoArray = $request->input('Riesgos');
-
-       dd($request->input($participanteArray));
-         return Response::json($participanteArray);
-      //print_r("valores recibidos ".response()->json($participanteArray));
-
-
-
-   }
     ///desplegar vista desde el controlador 
     public function ver()
     { /// Consulta los catalogos de la BD 
@@ -94,9 +124,9 @@ class inademController extends Controller
      $anEnt = new AnalisisEntorno;
      $objP= new ObjetivoProyecto;
      $col = new Colaboracion;
-     $participante = new Participante;
      $equipo = new EquipoEmprendedor;
      $riesgo = new Riesgos;
+
 
     /* Tabla tecnologia  */
     $tecnologia->titulo = Input::get('titulo');
@@ -132,15 +162,6 @@ class inademController extends Controller
      $objP->bajaLogica=1;
 
 
-     //Tabla Participantes
-
-
-      $nomPart = $request->input('nomPart');
-      $gradoEstP = $request->input('gradoEstP');
-      $arCon = $request->input('areaConocimiento');
-      $correoP = $request->input('correoPart');
-      $telPart = $request->input('telPart');
-      $instPart = $request->input('instPart');
 
        //Tabla colaboracion
 /*     $col->fk_Institucion

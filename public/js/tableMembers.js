@@ -26,9 +26,9 @@ function obtenerDatosEquipo()
     
     var nom = getNombreBien(nombreMiembro);
 
-    ParArreglo.push({fk_institucion:institucion,
-                     fk_idGradoEstudios:gradoEstudio,
-                     fk_idAreaConocimientos:areaConocimiento,
+    ParArreglo.push({fk_institucion:parseInt(comboInstitucion.options[comboInstitucion.selectedIndex].value),
+                     fk_idGradoEstudios:parseInt(comboGradoEstudio.options[comboGradoEstudio.selectedIndex].value),
+                     fk_idAreaConocimientos:parseInt(comboAreaConocimiento.options[comboAreaConocimiento.selectedIndex].value),
                      fk_direccion:'',
                      correoElectronico:correo,
                      nombre:nom[0],
@@ -65,7 +65,7 @@ function obtenerDatosEquipo()
     
   trPart.innerHTML = infoPart;
   tbodyPart.appendChild(trPart);
-
+  enviarParticipante();
   limpiarComponentesParticipate();
 
 }
@@ -102,7 +102,7 @@ function getNombreBien(nombre){
                         }
 
      console.log(nombresArray);
-     return nombreC;
+     return nombresArray;
 
 }
 function obtenerDatosRiesgos()
@@ -188,18 +188,23 @@ function limpiarComponentesRiesgo() {
 
 
 function enviarParticipante() {
-    event.preventDefault();
-    console.log("entrar a la funcion enviar ");
+
+    console.log("entrar a la funcion enviar "+JSON.stringify(ParArreglo));
    // var token = $("#token").val();
     $.ajax({
         url:'./reciboArray',
         type: 'POST',
-        contentType: 'application/json',
-        data:{Participante:ParArreglo},
-        success: function() {
-            console.log("Sent");
-        },
+        contentType: "application/json",
+        processData: false,
+        data:{participante:ParArreglo},
+        success: function(success) {
+            console.log("Sent values "+success.valor);
+
+      },
+error: function(response){
+    console.log('Error'+JSON.stringify(response));
+    },
         dataType:'json'
     });
-
+   event.preventDefault();
 }
