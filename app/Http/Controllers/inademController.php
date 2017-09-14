@@ -87,7 +87,7 @@ class inademController extends Controller
         
           ///////////PARTE 2 y 3///////////
         //--- catalogo TRL---//
-        $TRL = DB::select('select * from TRL');
+        $TRL = DB::select('select * from trl');
         //--- catalogo Sector---//
         $sector = DB::select('select * from tiposector');
         
