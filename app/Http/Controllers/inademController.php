@@ -31,7 +31,7 @@ class inademController extends Controller
      //modelo de la tabla Participante
   if($request->ajax()){
 
-    $dato =$request->all(); // This will get all the request data.
+    $dato =$request->participante; // This will get all the request data.
 
             $participante = new Participante;
             $tecno = new Tecnologia;
@@ -39,26 +39,29 @@ class inademController extends Controller
          //consulta a la tabla tecnologiaProyecto, el ultimo ID integrado
        $idTec = $tecno->id;
 
-             $participante->fk_idInstitucion = $request->input('fk_institucion');
-               $participante->fk_idGradoEstudios = $request->input('fk_idGradoEstudios');
-               $participante->fk_idAreaConocimientos = $request->input('fk_idAreaConocimientos');
-               $participante->fk_idDireccion = $request->input('fk_idDireccion');
-               $participante->correoElectronico =$request->input('correoElectronico');
-               $participante->nombre = $request->input('nombre');
-               $participante->apellidoPaterno = $request->input('apellidoPaterno');
-               $participante->apellidoMaterno = $request->input('apellidoMaterno');
-               $participante->numeroMovil = $request->input('numeroMovil');
-               $participante->fechaNacimiento = $request->input('fechaNacimiento');
-               $participante->curp = $request->input('curp');
-               $participante->genero = $request->input('genero');
-               $participante->telefonoFijo = $request->input('telefonoFijo');
-               $participante->numeroControl =$request->input('numeroControl');
-               $participante->correoInstitucional = $request->input('correoInstitucional');
-               $participante->bajaLogica = $request->input('bajaLogica');
+       foreach($dato as $d){
+               $participante->fk_idInstitucion = $d["fk_institucion"];//$request->input('fk_institucion');
+               $participante->fk_idGradoEstudios = $d['fk_idGradoEstudios'];
+               $participante->fk_idAreaConocimientos = $d['fk_idAreaConocimientos'];
+               //$participante->fk_idDireccion = $d['fk_idDireccion'];
+               $participante->correoElectronico =$d['correoElectronico'];
+               $participante->nombre = $d['nombre'];
+               $participante->apellidoPaterno = $d['apellidoPaterno'];
+               $participante->apellidoMaterno = $d['apellidoMaterno'];
+               $participante->numeroMovil = $d['numeroMovil'];
+               //$participante->fechaNacimiento = $d['fechaNacimiento'];
+               $participante->curp = $d['curp'];
+               $participante->genero = $d['genero'];
+               $participante->telefonoFijo = $d['telefonoFijo'];
+               $participante->numeroControl =$d['numeroControl'];
+               $participante->correoInstitucional = $d['correoInstitucional'];
+               $participante->bajaLogica = $d['bajaLogica'];
                $participante->fk_idTecnologiaProyecto = $idTec;
+
+       }
           $participante->save();
 
-         return response()->json(['valor'=>'hooooolaa !!  ']);
+         return response()->json($dato);
 
 
         }
