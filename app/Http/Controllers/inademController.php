@@ -3,20 +3,20 @@
 namespace inadem\Http\Controllers;
 
 
-use inadem\Http\Controllers\Controller;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use inadem\Tecnologia;
-use inadem\Institucion;
-use inadem\Proyecto;
-use inadem\PropiedadIntelectual;
-use inadem\AnalisisEntorno;
-use inadem\ObjetivoProyecto;
-use inadem\Colaboracion;
-use inadem\EquipoEmprendedor;
-use inadem\Participante;
-use inadem\Riesgos;
+use App\Tecnologia;
+use App\Institucion;
+use App\Proyecto;
+use App\PropiedadIntelectual;
+use App\AnalisisEntorno;
+use App\ObjetivoProyecto;
+use App\Colaboracion;
+use App\EquipoEmprendedor;
+use App\Participante;
+use App\Riesgos;
 use Log;
 
 
