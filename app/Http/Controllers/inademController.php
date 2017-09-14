@@ -1,21 +1,22 @@
 <?php 
 
-namespace App\Http\Controllers;
+namespace inadem\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+
+use inadem\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
-use App\Tecnologia;
-use App\Institucion;
-use App\Proyecto;
-use App\PropiedadIntelectual;
-use App\AnalisisEntorno;
-use App\ObjetivoProyecto;
-use App\Colaboracion;
-use App\EquipoEmprendedor;
-use App\Participante;
-use App\Riesgos;
+use inadem\Tecnologia;
+use inadem\Institucion;
+use inadem\Proyecto;
+use inadem\PropiedadIntelectual;
+use inadem\AnalisisEntorno;
+use inadem\ObjetivoProyecto;
+use inadem\Colaboracion;
+use inadem\EquipoEmprendedor;
+use inadem\Participante;
+use inadem\Riesgos;
 use Log;
 
 
@@ -32,33 +33,32 @@ class inademController extends Controller
 
     $dato =$request->all(); // This will get all the request data.
 
-
             $participante = new Participante;
             $tecno = new Tecnologia;
 
          //consulta a la tabla tecnologiaProyecto, el ultimo ID integrado
        $idTec = $tecno->id;
 
-               $participante->fk_idInstitucion = $request->input('participante.fk_institucion');
-               $participante->fk_idGradoEstudios = $request->input('participante.fk_idGradoEstudios');
-               $participante->fk_idAreaConocimientos = $request->input('participante.fk_idAreaConocimientos');
-               $participante->fk_idDireccion = $request->input('participante.fk_idDireccion');
-               $participante->correoElectronico =$request->input('participante.correoElectronico');
-               $participante->nombre = $request->input('participante.nombre');
-               $participante->apellidoPaterno = $request->input('participante.apellidoPaterno');
-               $participante->apellidoMaterno = $request->input('participante.apellidoMaterno');
-               $participante->numeroMovil = $request->input('participante.numeroMovil');
-               $participante->fechaNacimiento = $request->input('participante.fechaNacimiento');
-               $participante->curp = $request->input('participante.curp');
-               $participante->genero = $request->input('participante.genero');
-               $participante->telefonoFijo = $request->input('participante.telefonoFijo');
-               $participante->numeroControl =$request->input('participante.numeroControl');
-               $participante->correoInstitucional = $request->input('participante.correoInstitucional');
-               $participante->bajaLogica = $request->input('participante.bajaLogica');
+             $participante->fk_idInstitucion = $request->input('fk_institucion');
+               $participante->fk_idGradoEstudios = $request->input('fk_idGradoEstudios');
+               $participante->fk_idAreaConocimientos = $request->input('fk_idAreaConocimientos');
+               $participante->fk_idDireccion = $request->input('fk_idDireccion');
+               $participante->correoElectronico =$request->input('correoElectronico');
+               $participante->nombre = $request->input('nombre');
+               $participante->apellidoPaterno = $request->input('apellidoPaterno');
+               $participante->apellidoMaterno = $request->input('apellidoMaterno');
+               $participante->numeroMovil = $request->input('numeroMovil');
+               $participante->fechaNacimiento = $request->input('fechaNacimiento');
+               $participante->curp = $request->input('curp');
+               $participante->genero = $request->input('genero');
+               $participante->telefonoFijo = $request->input('telefonoFijo');
+               $participante->numeroControl =$request->input('numeroControl');
+               $participante->correoInstitucional = $request->input('correoInstitucional');
+               $participante->bajaLogica = $request->input('bajaLogica');
                $participante->fk_idTecnologiaProyecto = $idTec;
           $participante->save();
 
-         return response()->json(['valor'=>$dato]);
+         return response()->json(['valor'=>'hooooolaa !!  ']);
 
 
         }
@@ -81,31 +81,31 @@ class inademController extends Controller
 
        ///////////PARTE 1///////////
         //--- catalogo gradoEstudios---//
-        $gradoEstudios = DB::select('select * from tipoGradoEstudios');
+        $gradoEstudios = DB::select('select * from tipogradoestudios');
         //--- catalogo areaConocimiento---//
-        $areaConocimiento = DB::select('select * from areaConocimiento'); 
+        $areaConocimiento = DB::select('select * from areaconocimiento');
         
           ///////////PARTE 2 y 3///////////
         //--- catalogo TRL---//
         $TRL = DB::select('select * from TRL');
         //--- catalogo Sector---//
-        $sector = DB::select('select * from tipoSector');
+        $sector = DB::select('select * from tiposector');
         
          ///////////PARTE 4 y 5///////////
         //--- catalogo propiedad intelectual---//
-        $propInt = DB::select('select * from tipoPropiedadIntelectual');
+        $propInt = DB::select('select * from tipopropiedadintelectual');
         //--- catalogo propiedad intelectual 2 pendiente ---//
-         $prot = DB::select('select * from tipoProteccion');
+         $prot = DB::select('select * from tipoproteccion');
         
          ///////////PARTE 6///////////
         //--- catalogo objetivo proyecto ---//
-        $objProy = DB::select('select * from tipoObjetivoProyecto');
+        $objProy = DB::select('select * from tipoobjetivoproyecto');
         
         
           
          ///////////PARTE 7///////////
         //--- catalogo riesgos---//
-        $riesgos = DB::select('select * from tipoRiesgo');
+        $riesgos = DB::select('select * from tiporiesgo');
         
     
         
