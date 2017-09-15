@@ -20,10 +20,7 @@ function obtenerDatosEquipo()
     var institucion = comboInstitucion.options[comboInstitucion.selectedIndex].text;
 
 
-    var tbodyPart = document.getElementById("cuerpoTabla");
-    var trPart = document.createElement('tr');
-    count_tr++;
-    
+
     var nom = getNombreBien(nombreMiembro);
 
     ParArreglo.push({fk_institucion:parseInt(comboInstitucion.options[comboInstitucion.selectedIndex].value),
@@ -44,27 +41,7 @@ function obtenerDatosEquipo()
                      bajaLogica:1
                     });
 
-    trPart.id= "miembro_" + count_tr;
-    
-    var infoPart = "<td classs='' id='nombreParticipante_"+ count_tr +"' name='nombreParticipante_"+ count_tr +"'>"+ nombreMiembro+"</td>";
 
-	infoPart += "<td classs='' id='gradoEstudioParticipante_"+ count_tr +"' name='gradoEstudioParticipante_"+ count_tr +"'>"+ gradoEstudio+"</td>";
-  
-    infoPart += "<td classs='' id='areaConocimientoParticipante_"+ count_tr +"' name='areaConocimientoParticipante_"+ count_tr +"'>"+ areaConocimiento+"</td>";
-    
-    infoPart += "<td classs='' id='correoParticipante_"+ count_tr +"' name='correoParticipante_"+ count_tr +"'>"+ correo+"&nbsp&nbsp"+"</td>";
-    
-    infoPart += "<td classs='' id='telefonoMovilParticipante_"+ count_tr +"' name='telefonoMovilParticipante_"+ count_tr +"'>"+ telefonoMovil+"</td>";
-    
-    infoPart += "<td classs='' id='institucionParticipante_"+ count_tr +"' name='institucionParticipante_"+ count_tr +"'>"+ institucion+"</td>";
-    
-	infoPart += "<td classs='' id='botonParticipante_"+ count_tr +"' name='botonParticipante_"+ count_tr +"'>"
-            +"<button type='submit' class='btn btn-red' onclick='eliminarParticipante("+trPart.id+")'>"
-            +"<span class='glyphicon glyphicon-remove'></span>"
-            +"</button></td>";
-    
-  trPart.innerHTML = infoPart;
-  tbodyPart.appendChild(trPart);
   enviarParticipante();
   limpiarComponentesParticipate();
 
@@ -111,8 +88,6 @@ function obtenerDatosRiesgos()
     var comboTipoRiesgo = document.getElementById("tipoRiesgo");
     var tipoRiesgo = comboTipoRiesgo.options[comboTipoRiesgo.selectedIndex].text;
 
-    console.log(tipoRiesgo);
-
     var descripcion = document.getElementById("descRiesgo").value;
 
     var estrategiaMitigacion = document.getElementById("estMitigacion").value;
@@ -125,7 +100,7 @@ function obtenerDatosRiesgos()
 
 
 
-    RiesArreglo.push({fk_idTipoRiesgo:document.getElementById("tipoRiesgo").value,
+    RiesArreglo.push({fk_idTipoRiesgo:parseInt(comboTipoRiesgo.options[comboTipoRiesgo.selectedIndex].value),
                       estrategiaMitigacion:estrategiaMitigacion ,
                       descripcion:descripcion,
                       bajaLogica:1});
@@ -147,7 +122,7 @@ function obtenerDatosRiesgos()
   tbody.appendChild(tr);
 
   limpiarComponentesRiesgo();
-  enviarParticipante();
+  enviarRiesgos();
 }
 
 
@@ -185,17 +160,15 @@ function limpiarComponentesRiesgo() {
 }
 
 
+function enviarRiesgos(){
 
-
-function enviarParticipante() {
-
-    console.log("entrar a la funcion enviar "+JSON.stringify(ParArreglo));
+      console.log("entrar a la funcion enviar riesgos  "+JSON.stringify(ParArreglo));
    // var token = $("#token").val();
     $.ajax({
-        url:'reciboArray',
+        url:'insertarRiesgo',
         type: 'POST',
         dataType: 'json',
-        data:{participante:ParArreglo},
+        data:{riesgo:RiesArreglo},
         success: function(success) {
             console.log("Sent values "+success);
 
@@ -204,5 +177,86 @@ error: function(response){
     console.log('Error'+JSON.stringify(response));
     }
     });
+}
+
+function enviarParticipante() {
+
+    console.log("entrar a la funcion enviar participante "+JSON.stringify(ParArreglo));
+   // var token = $("#token").val();
+    $.ajax({
+        url:'insertarParticipante',
+        type: 'POST',
+        dataType: 'json',
+        data:{participante:ParArreglo},
+        success: function(success) {
+            console.log("Sent values "+JSON.stringify(success));
+            //reiniciar el arreglo
+            ParArreglo = [];
+            crearTablaParticipante(success);
+
+      },
+error: function(response){
+    console.log('Error'+JSON.stringify(response));
+    }
+    });
    event.preventDefault();
+}
+
+
+function generar()
+{
+  var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+  var contraseña = "";
+  for (i=0; i<100; i++) contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+  return contraseña;
+}
+
+function guardarToken(clave){
+    console.log("entrar a AJAX");
+     $.ajax({
+        url:'tokenInademApp',
+        type: 'POST',
+        dataType: 'json',
+        data:{llave:clave},
+        success: function(success) {
+            console.log("Sent valores insertados "+success);
+
+
+      },
+error: function(response){
+    console.log('Error'+response);
+    }
+    });
+}
+
+function crearTablaParticipante(tabla){
+
+    var tbodyPart = document.getElementById("cuerpoTabla");
+    var trPart = document.createElement('tr');
+
+    forEach(tabla as t){
+
+    trPart.id= "miembro_" + t.idParticipante;
+
+    var infoPart = "<td classs='' id='nombreParticipante_"+t.idParticipante +"' name='nombreParticipante_"+ t.idParticipante +"'>"+ t.nombre+' '+t.apellidoPaterno+' '+t.apellidoMaterno+"</td>";
+
+	infoPart += "<td classs='' id='gradoEstudioParticipante_"+t.idParticipante +"' name='gradoEstudioParticipante_"+ t.idParticipante +"'>"+ gradoEstudio+"</td>";
+
+    infoPart += "<td classs='' id='areaConocimientoParticipante_"+ t.idParticipante +"' name='areaConocimientoParticipante_"+ t.idParticipante +"'>"+ areaConocimiento+"</td>";
+
+    infoPart += "<td classs='' id='correoParticipante_"+t.idParticipante+"' name='correoParticipante_"+t.idParticipante+"'>"+ correo+"&nbsp&nbsp"+"</td>";
+
+    infoPart += "<td classs='' id='telefonoMovilParticipante_"+ t.idParticipante +"' name='telefonoMovilParticipante_"+ t.idParticipante+"'>"+ telefonoMovil+"</td>";
+
+    infoPart += "<td classs='' id='institucionParticipante_"+ t.idParticipante+"' name='institucionParticipante_"+ t.idParticipante +"'>"+ institucion+"</td>";
+
+	infoPart += "<td classs='' id='botonParticipante_"+ t.idParticipante +"' name='botonParticipante_"+ t.idParticipante +"'>"
+            +"<button type='submit' class='btn btn-red' onclick='eliminarParticipante("+trPart.id+")'>"
+            +"<span class='glyphicon glyphicon-remove'></span>"
+            +"</button></td>";
+
+    }
+  trPart.innerHTML = infoPart;
+  tbodyPart.appendChild(trPart);
+
 }

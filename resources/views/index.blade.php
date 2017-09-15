@@ -98,11 +98,15 @@
     <script type="text/javascript" src="{{ asset('/js/popOver.js') }}"></script>
        <script type="text/javascript">
      $(document).ready(function(){
-           $.ajaxSetup({
+
+      $.ajaxSetup({
   headers: {
     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
   }
 });
+
+         var tokenInadem = generar();
+         guardarToken(tokenInadem);
      });
                </script>
     <script type="text/javascript" src="{{ asset('/js/tableMembers.js') }}"></script>

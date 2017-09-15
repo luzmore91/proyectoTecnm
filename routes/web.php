@@ -36,10 +36,12 @@ Route::get('editar', function(){
     return view('editar');
 });
 
-
+//metodo para token
+Route::post('tokenInademApp', 'inademController@tokenInademApp');
 //// enrutamiento de la accion
 Route::post('insertar', 'inademController@insertar');
-Route::post('reciboArray','inademController@reciboArray');
+Route::post('insertarParticipante','inademController@insertarParticipante');
+Route::post('insertarRiesgo','inademController@insertarRiesgo');
 
 #DataTables - Admin
 Route::get('datatable', ['uses'=>'PostController@datatable']);

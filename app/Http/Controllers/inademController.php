@@ -17,7 +17,9 @@ use App\Colaboracion;
 use App\EquipoEmprendedor;
 use App\Participante;
 use App\Riesgos;
+use App\TokenIna;
 use Log;
+
 
 
 class inademController extends Controller
@@ -25,7 +27,49 @@ class inademController extends Controller
 
 
 
-    public function reciboArray(Request $request){
+    public function insertarRiesgo(Request $request){
+          //modelo de la tabla Riesgo
+$retorno = '';
+  if($request->ajax()){
+     $dato =$request->riesgo;
+           $riesgo = new Riesgos;
+
+      foreach($dato as $d){
+
+               $riesgo->fk_idTipoRiesgo = $d["fk_idTipoRiesgo"];//$request->input('fk_institucion');
+               $riesgo->estrategiaMitigacion = $d['estrategiaMitigacion'];
+               $riesgo->descripcion = $d['descripcion'];
+               $riesgo->bajaLogica=$d['bajaLogica'];
+
+      }
+           $saved = $riesgo->save();
+       }
+
+    if($saved){
+    // Hurray!
+        $retorno = "guardado exitosamente";
+    //consultar los valores insertados
+         }
+    else {
+    // Whooops
+        $retorno = "intenta nuevamente por favor";
+            }
+         return response()->json($retorno);
+    }
+
+    public function tokenInademApp(Request $request){
+        if($request->ajax()){
+          $dato =$request->llave;
+          $llavecita = new TokenIna;
+          $llavecita->llave=$dato;
+          $llavecita->save();
+
+            return response()->json('almacenado');
+        }
+
+    }
+
+    public function insertarParticipante(Request $request){
 
 
      //modelo de la tabla Participante
@@ -34,10 +78,11 @@ class inademController extends Controller
     $dato =$request->participante; // This will get all the request data.
 
             $participante = new Participante;
-            $tecno = new Tecnologia;
+
 
          //consulta a la tabla tecnologiaProyecto, el ultimo ID integrado
-       $idTec = $tecno->id;
+       $idTec = DB::select('select idToken from tokeninadem ORDER BY idToken DESC LIMIT 1 ');
+       $result = json_decode(json_encode($idTec), true);
 
        foreach($dato as $d){
                $participante->fk_idInstitucion = $d["fk_institucion"];//$request->input('fk_institucion');
@@ -56,12 +101,28 @@ class inademController extends Controller
                $participante->numeroControl =$d['numeroControl'];
                $participante->correoInstitucional = $d['correoInstitucional'];
                $participante->bajaLogica = $d['bajaLogica'];
-               $participante->fk_idTecnologiaProyecto = $idTec;
+              // $participante->fk_idTecnologiaProyecto = $idTec;
+          // $participante->fk_idTokenAppIn = $result;
+
 
        }
-          $participante->save();
+      foreach($result as $i){
+         $participante->fk_idTokenAppIn = $i['idToken'];
 
-         return response()->json($dato);
+          $idT = $i['idToken'];
+      }
+
+         $saved = $participante->save();
+        if($saved){
+            //consultar los valores insertados.
+            $participanteQuery = DB::select('select p.idParticipante,p.nombre,p.apellidoPaterno,apellidoMaterno,p.correoElectronico,p.numeroMovil,g.nivel,a.descripcion,i.nombreInstitucion from participante WHERE  fk_idTokenAppIn = '.$idT);
+            $insertados = $participanteQuery;
+         }
+    else {
+    // Whooops
+        $insertados = "intenta nuevamente por favor";
+            }
+         return response()->json($insertados);
 
 
         }
@@ -128,7 +189,7 @@ class inademController extends Controller
      $objP= new ObjetivoProyecto;
      $col = new Colaboracion;
      $equipo = new EquipoEmprendedor;
-     $riesgo = new Riesgos;
+
 
 
     /* Tabla tecnologia  */
@@ -175,13 +236,6 @@ class inademController extends Controller
 
 
 
-//$riesgos->insert($dataRiesgos);
-/*
-     $riesgos->estrategiaMitigacion=Input::get('estMitigacion');
-     $riesgos->descripcion=Input::get('descRiesgo');
-     $riesgos->fk_idCatalogoRiesgo=Input::get('descRiesgo');
-     $riesgo->fk_idProyecto = '';
-     $riesgo->bajaLogica = 1;
 
      //Tabla proyecto
      $proyecto->fk_idEquipoEmprendedor=Input::get('madurezProy');
@@ -209,6 +263,7 @@ class inademController extends Controller
       //$proyecto->save();
       $propInt->save();
       $objP->save();
-       //DB::insert('INSERT INTO version_authors (credit_id) VALUES (?)', array($credit_id));
+
+    return redirect()->back();
 }
 }
