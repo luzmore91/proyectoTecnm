@@ -126,13 +126,11 @@ function obtenerDatosRiesgos()
 }
 
 
-function eliminarParticipante(idRegistroParticipante)
+function eliminarRegistroParticipante(objP)
 {
-    var registroEliminarParticipante = idRegistroParticipante;
-    var campoEliminarParticipante = document.getElementById(registroEliminarParticipante);
-    //campoEliminarParticipante.remove();
-    //ParArreglo.splice(getIDEliminar(registroEliminarParticipante), 1);
-    eliminarRegistroParticipante(idRegistroParticipante);
+     if(objP.eliminado = 1){
+     $('#miembro_'+objP.idParticipante).remove();
+     }
 }
 
 function eliminarRiesgo(idRegistroRiesgo)
@@ -236,19 +234,21 @@ function crearTablaParticipante(tabla){
 
 }
 
-function eliminarRegistroParticipante(idP){
-
+function eliminarParticipante(idP){
+ console.log("vamos a eliminar a "+idP);
     $.ajax({
         url:'eliminarParticipante',
         type: 'POST',
         dataType: 'json',
-        data:{idParticipante:idP},
+        data:{idParticipante:parseInt(idP)},
         success: function(success) {
-            console.log("Envio id  "+success);
+            console.log("Retorno  "+success);
+            eliminarRegistroParticipante(success);
+
 
       },
 error: function(response){
-    console.log('Error'+JSON.stringify(response));
+    console.log('Error Ajax');
     }
     });
 }

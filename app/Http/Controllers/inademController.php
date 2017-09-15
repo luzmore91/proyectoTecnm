@@ -139,9 +139,16 @@ participante.fk_idTokenAppIn  = '.$idT);
 
 public function eliminarParticipante(Request $request){
 if($request->ajax()){
+    $dato =$request->idParticipante;
 
-$participante = Participante::find($request->idParticipante);
-$participante->delete();
+    $saved = DB::select("DELETE FROM participante WHERE idParticipante = ".$dato);
+
+    if($saved){
+        $envio = "si";
+    }else{
+        $envio = "no";
+    }
+    return response()->json([{'eliminado'=>$envio,'idParticipante'=>$dato}]);
 }
 }
 
