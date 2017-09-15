@@ -41,6 +41,7 @@ Route::post('tokenInademApp', 'inademController@tokenInademApp');
 //// enrutamiento de la accion
 Route::post('insertar', 'inademController@insertar');
 Route::post('insertarParticipante','inademController@insertarParticipante');
+Route::post('eliminarParticipante','inademController@eliminarParticipante');
 Route::post('insertarRiesgo','inademController@insertarRiesgo');
 
 #DataTables - Admin

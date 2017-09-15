@@ -105,7 +105,36 @@
   }
 });
 
-         var tokenInadem = generar();
+
+function generar()
+{
+  var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
+  var contraseña = "";
+  for (i=0; i<100; i++) contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
+  return contraseña;
+}
+
+function guardarToken(clave){
+    console.log("entrar a AJAX");
+     $.ajax({
+        url:'tokenInademApp',
+        type: 'POST',
+        dataType: 'json',
+        data:{llave:clave},
+        success: function(success) {
+            console.log("Sent valores insertados "+success);
+
+
+      },
+error: function(response){
+    console.log('Error'+response);
+    }
+    });
+}
+
+
+
+        var tokenInadem = generar();
          guardarToken(tokenInadem);
      });
                </script>

@@ -115,7 +115,15 @@ $retorno = '';
          $saved = $participante->save();
         if($saved){
             //consultar los valores insertados.
-            $participanteQuery = DB::select('select p.idParticipante,p.nombre,p.apellidoPaterno,apellidoMaterno,p.correoElectronico,p.numeroMovil,g.nivel,a.descripcion,i.nombreInstitucion from participante WHERE  fk_idTokenAppIn = '.$idT);
+            $participanteQuery = DB::select('select participante.idParticipante,participante.nombre,participante.apellidoPaterno,participante.apellidoMaterno,participante.correoElectronico,participante.numeroMovil,
+tipogradoestudios.nivel,areaconocimiento.descripcion,institucion.nombreInstitucion from participante INNER JOIN tipogradoestudios
+ON participante.fk_idGradoEstudios=tipogradoestudios.idGradoEstudios
+INNER JOIN institucion
+ ON institucion.idInstitucion=participante.fk_idInstitucion
+INNER JOIN areaconocimiento
+ON areaconocimiento.idAreaConocimiento=participante.fk_idAreaConocimientos
+WHERE
+participante.fk_idTokenAppIn  = '.$idT);
             $insertados = $participanteQuery;
          }
     else {
@@ -127,11 +135,18 @@ $retorno = '';
 
         }
 
+    }
+
+public function eliminarParticipante(Request $request){
+if($request->ajax()){
+
+$participante = Participante::find($request->idParticipante);
+$participante->delete();
+}
+}
 
 
 
-
-      }
     ///desplegar vista desde el controlador 
     public function ver()
     { /// Consulta los catalogos de la BD 

@@ -128,10 +128,11 @@ function obtenerDatosRiesgos()
 
 function eliminarParticipante(idRegistroParticipante)
 {
-    var registroEliminarParticipante = idRegistroParticipante.id;
+    var registroEliminarParticipante = idRegistroParticipante;
     var campoEliminarParticipante = document.getElementById(registroEliminarParticipante);
-    campoEliminarParticipante.remove();
-    ParArreglo.splice(getIDEliminar(registroEliminarParticipante), 1);
+    //campoEliminarParticipante.remove();
+    //ParArreglo.splice(getIDEliminar(registroEliminarParticipante), 1);
+    eliminarRegistroParticipante(idRegistroParticipante);
 }
 
 function eliminarRiesgo(idRegistroRiesgo)
@@ -203,60 +204,51 @@ error: function(response){
 }
 
 
-function generar()
-{
-  var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
-  var contraseña = "";
-  for (i=0; i<100; i++) contraseña += caracteres.charAt(Math.floor(Math.random()*caracteres.length));
-  return contraseña;
-}
-
-function guardarToken(clave){
-    console.log("entrar a AJAX");
-     $.ajax({
-        url:'tokenInademApp',
-        type: 'POST',
-        dataType: 'json',
-        data:{llave:clave},
-        success: function(success) {
-            console.log("Sent valores insertados "+success);
-
-
-      },
-error: function(response){
-    console.log('Error'+response);
-    }
-    });
-}
-
 function crearTablaParticipante(tabla){
 
     var tbodyPart = document.getElementById("cuerpoTabla");
     var trPart = document.createElement('tr');
 
-    forEach(tabla as t){
 
-    trPart.id= "miembro_" + t.idParticipante;
+    jQuery.each(tabla, function(i,val) {
+         trPart.id= "miembro_" + val.idParticipante;
 
-    var infoPart = "<td classs='' id='nombreParticipante_"+t.idParticipante +"' name='nombreParticipante_"+ t.idParticipante +"'>"+ t.nombre+' '+t.apellidoPaterno+' '+t.apellidoMaterno+"</td>";
+    var infoPart = "<td classs='' id='nombreParticipante_"+val.idParticipante +"' name='nombreParticipante_"+ val.idParticipante +"'>"+ val.nombre+' '+val.apellidoPaterno+' '+val.apellidoMaterno+"</td>";
 
-	infoPart += "<td classs='' id='gradoEstudioParticipante_"+t.idParticipante +"' name='gradoEstudioParticipante_"+ t.idParticipante +"'>"+ gradoEstudio+"</td>";
+	infoPart += "<td classs='' id='gradoEstudioParticipante_"+val.idParticipante +"' name='gradoEstudioParticipante_"+ val.idParticipante +"'>"+val.nivel+"</td>";
 
-    infoPart += "<td classs='' id='areaConocimientoParticipante_"+ t.idParticipante +"' name='areaConocimientoParticipante_"+ t.idParticipante +"'>"+ areaConocimiento+"</td>";
+    infoPart += "<td classs='' id='areaConocimientoParticipante_"+ val.idParticipante +"' name='areaConocimientoParticipante_"+ val.idParticipante +"'>"+val.descripcion+"</td>";
 
-    infoPart += "<td classs='' id='correoParticipante_"+t.idParticipante+"' name='correoParticipante_"+t.idParticipante+"'>"+ correo+"&nbsp&nbsp"+"</td>";
+    infoPart += "<td classs='' id='correoParticipante_"+val.idParticipante+"' name='correoParticipante_"+val.idParticipante+"'>"+val.correoElectronico+"&nbsp&nbsp"+"</td>";
 
-    infoPart += "<td classs='' id='telefonoMovilParticipante_"+ t.idParticipante +"' name='telefonoMovilParticipante_"+ t.idParticipante+"'>"+ telefonoMovil+"</td>";
+    infoPart += "<td classs='' id='telefonoMovilParticipante_"+ val.idParticipante +"' name='telefonoMovilParticipante_"+ val.idParticipante+"'>"+ val.numeroMovil+"</td>";
 
-    infoPart += "<td classs='' id='institucionParticipante_"+ t.idParticipante+"' name='institucionParticipante_"+ t.idParticipante +"'>"+ institucion+"</td>";
+    infoPart += "<td classs='' id='institucionParticipante_"+ val.idParticipante+"' name='institucionParticipante_"+ val.idParticipante +"'>"+ val.nombreInstitucion+"</td>";
 
-	infoPart += "<td classs='' id='botonParticipante_"+ t.idParticipante +"' name='botonParticipante_"+ t.idParticipante +"'>"
-            +"<button type='submit' class='btn btn-red' onclick='eliminarParticipante("+trPart.id+")'>"
+	infoPart += "<td classs='' id='botonParticipante_"+ val.idParticipante +"' name='botonParticipante_"+ val.idParticipante +"'>"
+            +"<button type='submit' class='btn btn-red' onclick='eliminarParticipante("+val.idParticipante+")'>"
             +"<span class='glyphicon glyphicon-remove'></span>"
             +"</button></td>";
 
-    }
-  trPart.innerHTML = infoPart;
+          trPart.innerHTML = infoPart;
   tbodyPart.appendChild(trPart);
+     });
 
+}
+
+function eliminarRegistroParticipante(idP){
+
+    $.ajax({
+        url:'eliminarParticipante',
+        type: 'POST',
+        dataType: 'json',
+        data:{idParticipante:idP},
+        success: function(success) {
+            console.log("Envio id  "+success);
+
+      },
+error: function(response){
+    console.log('Error'+JSON.stringify(response));
+    }
+    });
 }
