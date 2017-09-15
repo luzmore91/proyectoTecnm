@@ -148,7 +148,7 @@ if($request->ajax()){
     }else{
         $envio = "no";
     }
-    return response()->json([{'eliminado'=>$envio,'idParticipante'=>$dato}]);
+    return response()->json(['eliminado'=>$envio,'idParticipante'=>$dato]);
 }
 }
 
