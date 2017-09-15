@@ -126,12 +126,11 @@ function obtenerDatosRiesgos()
 }
 
 
-function eliminarParticipante(idRegistroParticipante)
+function eliminarRegistroParticipante(objP)
 {
-    var registroEliminarParticipante = idRegistroParticipante.id;
-    var campoEliminarParticipante = document.getElementById(registroEliminarParticipante);
-    campoEliminarParticipante.remove();
-    ParArreglo.splice(getIDEliminar(registroEliminarParticipante), 1);
+     if(objP.eliminado = 1){
+     $('#miembro_'+objP.idParticipante).remove();
+     }
 }
 
 function eliminarRiesgo(idRegistroRiesgo)
@@ -161,6 +160,7 @@ function limpiarComponentesRiesgo() {
 
 
 function enviarRiesgos(){
+<<<<<<< HEAD
 
       console.log("entrar a la funcion enviar riesgos  "+JSON.stringify(ParArreglo));
    // var token = $("#token").val();
@@ -172,6 +172,19 @@ function enviarRiesgos(){
         success: function(success) {
             console.log("Sent values "+success);
 
+=======
+
+      console.log("entrar a la funcion enviar riesgos  "+JSON.stringify(ParArreglo));
+   // var token = $("#token").val();
+    $.ajax({
+        url:'insertarRiesgo',
+        type: 'POST',
+        dataType: 'json',
+        data:{riesgo:RiesArreglo},
+        success: function(success) {
+            console.log("Sent values "+success);
+
+>>>>>>> e218aeb3a4215e25cfad91d684af5f07e81e8299
       },
 error: function(response){
     console.log('Error'+JSON.stringify(response));
@@ -203,6 +216,7 @@ error: function(response){
 }
 
 
+<<<<<<< HEAD
 function generar()
 {
   var caracteres = "abcdefghijkmnpqrtuvwxyzABCDEFGHIJKLMNPQRTUVWXYZ2346789";
@@ -229,11 +243,14 @@ error: function(response){
     });
 }
 
+=======
+>>>>>>> e218aeb3a4215e25cfad91d684af5f07e81e8299
 function crearTablaParticipante(tabla){
 
     var tbodyPart = document.getElementById("cuerpoTabla");
     var trPart = document.createElement('tr');
 
+<<<<<<< HEAD
     forEach(tabla as t){
 
     trPart.id= "miembro_" + t.idParticipante;
@@ -259,4 +276,50 @@ function crearTablaParticipante(tabla){
   trPart.innerHTML = infoPart;
   tbodyPart.appendChild(trPart);
 
+=======
+
+    jQuery.each(tabla, function(i,val) {
+         trPart.id= "miembro_" + val.idParticipante;
+
+    var infoPart = "<td classs='' id='nombreParticipante_"+val.idParticipante +"' name='nombreParticipante_"+ val.idParticipante +"'>"+ val.nombre+' '+val.apellidoPaterno+' '+val.apellidoMaterno+"</td>";
+
+	infoPart += "<td classs='' id='gradoEstudioParticipante_"+val.idParticipante +"' name='gradoEstudioParticipante_"+ val.idParticipante +"'>"+val.nivel+"</td>";
+
+    infoPart += "<td classs='' id='areaConocimientoParticipante_"+ val.idParticipante +"' name='areaConocimientoParticipante_"+ val.idParticipante +"'>"+val.descripcion+"</td>";
+
+    infoPart += "<td classs='' id='correoParticipante_"+val.idParticipante+"' name='correoParticipante_"+val.idParticipante+"'>"+val.correoElectronico+"&nbsp&nbsp"+"</td>";
+
+    infoPart += "<td classs='' id='telefonoMovilParticipante_"+ val.idParticipante +"' name='telefonoMovilParticipante_"+ val.idParticipante+"'>"+ val.numeroMovil+"</td>";
+
+    infoPart += "<td classs='' id='institucionParticipante_"+ val.idParticipante+"' name='institucionParticipante_"+ val.idParticipante +"'>"+ val.nombreInstitucion+"</td>";
+
+	infoPart += "<td classs='' id='botonParticipante_"+ val.idParticipante +"' name='botonParticipante_"+ val.idParticipante +"'>"
+            +"<button type='submit' class='btn btn-red' onclick='eliminarParticipante("+val.idParticipante+")'>"
+            +"<span class='glyphicon glyphicon-remove'></span>"
+            +"</button></td>";
+
+          trPart.innerHTML = infoPart;
+  tbodyPart.appendChild(trPart);
+     });
+
+}
+
+function eliminarParticipante(idP){
+ console.log("vamos a eliminar a "+idP);
+    $.ajax({
+        url:'eliminarParticipante',
+        type: 'POST',
+        dataType: 'json',
+        data:{idParticipante:parseInt(idP)},
+        success: function(success) {
+            console.log("Retorno  "+success);
+            eliminarRegistroParticipante(success);
+
+
+      },
+error: function(response){
+    console.log('Error Ajax');
+    }
+    });
+>>>>>>> e218aeb3a4215e25cfad91d684af5f07e81e8299
 }

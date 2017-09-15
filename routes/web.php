@@ -33,9 +33,21 @@ Route::get('admin','AdminController@index');
 Route::get('admin/{id}','AdminController@editar');
 Route::post('admin/{id}','AdminController@eliminar');
 
+<<<<<<< HEAD
+=======
+//Enrutamiento de la modificacion de proyectos (lo que sigue de admin)
+Route::get('editar', function(){
+    return view('editar');
+});
+
+//metodo para token
+Route::post('tokenInademApp', 'inademController@tokenInademApp');
+>>>>>>> e218aeb3a4215e25cfad91d684af5f07e81e8299
 //// enrutamiento de la accion
-Route::post('/insertar', 'inademController@insertar');
-Route::post('/reciboArray','inademController@reciboArray');
+Route::post('insertar', 'inademController@insertar');
+Route::post('insertarParticipante','inademController@insertarParticipante');
+Route::post('eliminarParticipante','inademController@eliminarParticipante');
+Route::post('insertarRiesgo','inademController@insertarRiesgo');
 
 #DataTables - Admin
 Route::get('datatable', ['uses'=>'PostController@datatable']);
