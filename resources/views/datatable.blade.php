@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     
-        <title>Laravel 5 - Implementing datatables tutorial using yajra package</title>
+     
 
     <head>
          <title>Tecnologico de mexico</title>
@@ -86,7 +86,15 @@
             });
 
         </script>
+        
+	<!-- Boton para exportar en formato Excel -->
+	<div class="container">
+            @include('excel')
+        </div>
+
     </body>
+
+
             <div class="container">
             @include('footer')
         </div>

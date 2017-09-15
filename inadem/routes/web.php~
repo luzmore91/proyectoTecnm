@@ -36,11 +36,6 @@ Route::get('editar', function(){
     return view('editar');
 });
 
-//Enrutamiento de la generación del archivo Excel
-Route::get('generarExcel', function(){
-    return view('generarExcel');
-});
-
 
 //// enrutamiento de la accion
 Route::post('insertar', 'inademController@insertar');
