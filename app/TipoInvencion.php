@@ -1,13 +1,11 @@
 <?php
-
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Riesgos extends Model
+class TipoInvencion extends Model
 {
      //tabla a utilizar
-    protected $table = 'riesgo';
+    protected $table = 'TipoInvencion';
     public $timestamps = false;
-
 }

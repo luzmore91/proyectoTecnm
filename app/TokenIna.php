@@ -4,10 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Riesgos extends Model
+class TokenIna extends Model
 {
      //tabla a utilizar
-    protected $table = 'riesgo';
+    protected $table = 'tokeninadem';
     public $timestamps = false;
-
 }

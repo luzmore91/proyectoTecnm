@@ -194,5 +194,6 @@ class inademController extends Controller
         return "El proyecto no existe";
     }
     return view('editar', ["proyecto"=>$proyecto, "instituciones"=>$instituciones, "invenciones"=>$invenciones]);
+
 }
 }

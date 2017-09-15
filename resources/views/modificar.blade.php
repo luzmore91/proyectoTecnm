@@ -53,7 +53,7 @@
     </thead>
     <tbody>
         <tr>
-            <td contenteditable='true'>Elemento1</td>
+            <td contenteditable='true'>{{ $proyecto->idEquipoEmprendedor}}</td>
             <td>
                 <select>
                     <option value="volvo">Cargar catálogo</option>

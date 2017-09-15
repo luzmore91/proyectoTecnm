@@ -26,6 +26,7 @@ Route::get('home', function () {
 Route::get('/','inademController@ver');
 //Enrutamiento de la modificacion de proyectos (lo que sigue de admin)
 Route::get('/proyecto/{id}','inademController@editar');
+Route::get('/equipoemprendedor/{id}','inademController@editar');
 
 //Route::get('admin', function () {return view('admin');});
 Route::get('admin','AdminController@index');
