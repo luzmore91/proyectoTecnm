@@ -13,6 +13,7 @@
 <div class="col-xs-5" style="padding-bottom:20px" >
 
  	<select class="form-control selectpicker" data-style="btn-green" name="madurezProy">
+        <option>Seleccione una opción</option>
                   		 @foreach ($TRL as $trl)
                                         <option value="{{$trl->idTRL}}"> {{ $trl->descripcion }}</option>
                                           @endforeach
@@ -32,6 +33,7 @@
            <div class="col-xs-12">
 <div class="col-xs-5" style="padding-bottom:20px" >
  	<select class="form-control selectpicker" data-style="btn-green" name="sectorEst">
+        <option>Seleccione una opción</option>
                   		@foreach ($sector as $sector)
                                         <option value="{{$sector->idSector}}"> {{ $sector->descripcion }}</option>
                                           @endforeach
@@ -54,6 +56,7 @@
 <div class="col-xs-2"><label> Estado actual</label></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green" name="estadoAct">
+        <option>Seleccione una opción</option>
         @foreach ($propInt as $itera)
         <option value="{{$itera->idTipoPropiedadIntelectual}}"> {{ $itera->descripcion }}</option>
         @endforeach
@@ -63,6 +66,7 @@
         <div class="col-xs-3"><label>En caso de que esté en proceso, revisión y otorgada la protección</label> <label style="font-style:italic">  favor de indicar el tipo de protección</label></div>
 <div class="col-xs-4">
     <select class="form-control selectpicker" data-style="btn-green" name="tipoProt">
+        <option>Seleccione una opción</option>
         @foreach ($prot as $itera)
         <option value="{{$itera->idTipoProteccion}}"> {{ $itera->descripcion }}</option>
         @endforeach
@@ -84,6 +88,7 @@
            <div class="col-xs-2"></div>
 <div class="col-xs-3">
  	<select class="form-control selectpicker" data-style="btn-green" name="perProy">
+        <option>Seleccione una opción</option>
                   		 @foreach ($objProy as $op)
                                         <option value="{{$op->idtipoObjetivoProyecto}}"> {{ $op->descripcion }}</option>
                                           @endforeach

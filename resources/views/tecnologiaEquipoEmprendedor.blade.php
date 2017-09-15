@@ -22,17 +22,18 @@
             	<!-- Input problematica -->
               	<div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="problematica">Problematica a resolver:</label></div>
-                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="problematica" rows="1" placeholder="Problematica que resolvera" name="problematica"></textarea></div>
+                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="problematica" placeholder="Problematica que resolvera" name="problematica" rows="10"></textarea></div>
               	</div>
                 <!-- Input descripcion -->
               	<div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="descripcion">Descripción / resumen:</label></div>
-                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="descripcion" rows="1" placeholder="Descripción o resumen del proyecto o tecnología" name="descripcion"></textarea></div>
+                	<div class="col-xs-10"><textarea style="resize: vertical" class="form-control" required id="descripcion" rows="10" placeholder="Descripción o resumen del proyecto o tecnología" name="descripcion"></textarea></div>
               	</div>   
       
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Institución:</label></div>
                 	<div class="col-xs-4"><select id="intitucion" required class="form-control selectpicker" data-style="btn-green" name="instEq">
+                         <option>Seleccione una opción</option>
                   		 @foreach ($institucion as $int)
                         <option value="{{$int->idInstitucion}}"> {{ $int->nombreInstitucion }}</option>
                         @endforeach
@@ -43,6 +44,7 @@
             <div class="col-xs-12" style="padding-top: 20px;">
                 	<div class="col-xs-2"><label for="name">Tipo de invención:</label></div>
                 	<div class="col-xs-4"><select required id="tipoInvension" class="form-control selectpicker" data-style="btn-green" name="tipoInv">
+                        <option>Seleccione una opción</option>
                   		@foreach ($inv as $in)
                         <option value="{{$in->idTipoInvencion}}"> {{ $in->descripcion }}</option>
                         @endforeach
@@ -81,13 +83,14 @@
       <div class="col-xs-12">
           <div class="col-xs-2"><input type="text" class="form-control" required id="nomPart" placeholder="" name="nomPart"/></div>
           
-          <div class="col-xs-2"><select id="gradoEstP" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">          
+          <div class="col-xs-2"><select id="gradoEstP" required class="form-control selectpicker" data-style="btn-green" name="gradoEstP">          <option>Seleccione una opción</option>
               @foreach ($gradoEstudios as $grado)
               <option value="{{$grado->idGradoEstudios}}"> {{ $grado->nivel }}</option>
               @endforeach
           </select></div>
           
           <div class="col-xs-2"><select id="areaConocimiento" required class="form-control selectpicker" data-style="btn-green" name="areaConocimiento"> 
+              <option>Seleccione una opción</option>
                @foreach ($areaConocimiento as $areaC)
                <option value="{{$areaC->idAreaConocimiento}}"> {{ $areaC->descripcion }}</option>
                @endforeach                                    
@@ -100,6 +103,7 @@
           </div>
           
           <div class="col-xs-2"><select id="instPart" required class="form-control selectpicker" data-style="btn-green" name="instPart">
+             <option>Seleccione una opción</option>
               @foreach ($institucion as $ti)
               <option value="{{$ti->idInstitucion}}"> {{ $ti->nombreInstitucion }}</option>
               @endforeach

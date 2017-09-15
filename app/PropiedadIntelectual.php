@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace inadem;
 
 use Illuminate\Database\Eloquent\Model;
 
 class PropiedadIntelectual extends Model
 {
     // tabla a utilizar
-    protected $table = 'propiedadIntelectual';
+    protected $table = 'propiedadintelectual';
     public $timestamps = false;
 
 }

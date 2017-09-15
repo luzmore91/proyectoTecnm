@@ -29,13 +29,13 @@ function obtenerDatosEquipo()
     ParArreglo.push({fk_institucion:parseInt(comboInstitucion.options[comboInstitucion.selectedIndex].value),
                      fk_idGradoEstudios:parseInt(comboGradoEstudio.options[comboGradoEstudio.selectedIndex].value),
                      fk_idAreaConocimientos:parseInt(comboAreaConocimiento.options[comboAreaConocimiento.selectedIndex].value),
-                     fk_direccion:'',
+                     //fk_direccion:NULL,
                      correoElectronico:correo,
                      nombre:nom[0],
                      apellidoPaterno:nom[1],
                      apellidoMaterno:nom[2],
                      numeroMovil:telefonoMovil,
-                     fechaNacimiento:'0000-00-00',
+                     //fechaNacimiento:'0000-00-00',
                      curp:'',
                      genero:0,
                      telefonoFijo:0,
@@ -192,19 +192,17 @@ function enviarParticipante() {
     console.log("entrar a la funcion enviar "+JSON.stringify(ParArreglo));
    // var token = $("#token").val();
     $.ajax({
-        url:'./reciboArray',
+        url:'reciboArray',
         type: 'POST',
-        contentType: "application/json",
-        processData: false,
+        dataType: 'json',
         data:{participante:ParArreglo},
         success: function(success) {
-            console.log("Sent values "+success.valor);
+            console.log("Sent values "+success);
 
       },
 error: function(response){
     console.log('Error'+JSON.stringify(response));
-    },
-        dataType:'json'
+    }
     });
    event.preventDefault();
 }

@@ -38,6 +38,7 @@
     <div class="col-xs-12">
 
         <div class="col-xs-3"><select id="tipoRiesgo" class="form-control selectpicker" name="tipoRiesgo" data-style="btn-green">
+            <option>Seleccione una opción</option>
             @foreach ($riesgos as $ri)
             <option value=""> {{ $ri->descripcion }}</option>
             @endforeach

@@ -8,6 +8,10 @@
         "php": ">=7.0.0",
         "fideloper/proxy": "~3.3",
         "laravel/framework": "5.5.*",
+        
+        "maatwebsite/excel": "~2.1.0",
+
+
         "laravel/tinker": "~1.0",
         "laravelcollective/html": "~5.0",
         "yajra/laravel-datatables-oracle": "^8.0"
@@ -24,7 +28,7 @@
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "inadem\\": "app/"
         }
     },
     "autoload-dev": {

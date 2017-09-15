@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace inadem;
 
 use Illuminate\Database\Eloquent\Model;
 
 class AnalisisEntorno extends Model
 {
         //tabla a utilizar
-    protected $table = 'analisisEntorno';
+    protected $table = 'analisisentorno';
     public $timestamps = false;
 }

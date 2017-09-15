@@ -171,17 +171,20 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\AuthServiceProvider::class,
-        // App\Providers\BroadcastServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        inadem\Providers\AppServiceProvider::class,
+        inadem\Providers\AuthServiceProvider::class,
+        // inadem\Providers\BroadcastServiceProvider::class,
+        inadem\Providers\EventServiceProvider::class,
+        inadem\Providers\RouteServiceProvider::class,
         'Collective\Html\HtmlServiceProvider',
 
         /*
         *DataTable ddel Admin
         */
         Yajra\Datatables\DatatablesServiceProvider::class,
+
+        //PHPExcel
+        Maatwebsite\Excel\ExcelServiceProvider::class,
 
     ],
 
@@ -238,6 +241,9 @@ return [
         *Data Table de Admin
         */
         'Datatables' => 'Yajra\Datatables\Facades\Datatables',
+
+        //PHPExcel
+        'Excel' => Maatwebsite\Excel\Facades\Excel::class,
 
     ],
 

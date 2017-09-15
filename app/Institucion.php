@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace inadem;
 
 use Illuminate\Database\Eloquent\Model;
 

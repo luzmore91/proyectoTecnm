@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace inadem\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Datatables;
@@ -16,7 +16,7 @@ class PostController extends Controller
     public function datatable()
     {
         //$proyectos = DB::table('tecnologiaproyecto')->select('*');
-        $proyectos = DB::select('select * from tecnologiaproyecto');
+        $proyectos = DB::select('select * from tecnologiaproyecto515');
         return view('datatable', ['proyectos'=>$proyectos]);
     }
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace inadem;
 
 use Illuminate\Database\Eloquent\Model;
 
 class EquipoEmprendedor extends Model
 {
      ////tabla a utilizar
-    protected $table = 'equipoEmprendedor';
+    protected $table = 'equipoemprendedor';
     public $timestamps = false;
 }

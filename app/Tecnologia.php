@@ -1,13 +1,13 @@
 <?php
 
-namespace App;
+namespace inadem;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Tecnologia extends Model
 {
     //tabla a utilizar
-    protected $table = 'tecnologiaProyecto';
+    protected $table = 'tecnologiaproyecto';
     
     protected $primaryKey = 'idTecnologiaProyecto';
     

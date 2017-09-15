@@ -1,9 +1,9 @@
 <?php
-namespace App\Http\Controllers;
+namespace inadem\Http\Controllers;
 use Illuminate\Http\Request;
 use Datatables;
 use DB;
-use App\Tecnologia;
+use inadem\Tecnologia;
 
 class AdminController extends Controller
 {

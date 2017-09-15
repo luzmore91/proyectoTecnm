@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace inadem;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -12,6 +12,6 @@ class Participante extends Model
 
     public function tecnologia()
     {
-         return $this->hasOne('App\Tecnologia');
+         return $this->hasOne('inadem\Tecnologia');
     }
 }
